@@ -56,6 +56,12 @@ Public Class formInsert
             dt_View = New DataTable
             If mode = "menu" Then
                 sqlQuery = "SELECT menu_id `ID`, menu_name `Name`, category_name `Category`, sell_price `Price`, IF(menu_status = 1,'Active','Non-Active') `Status` FROM category c, menu m WHERE c.category_id = m.category_id AND menu_delete = 0"
+            ElseIf mode = "ingredients" Then
+                sqlQuery = "SELECT ingredients_id `ID`, ingredients_name `Name`, stocks `Stock`, IF(ingredients_status = 1,'Active','Non-Active') `Status` FROM ingredients i WHERE ingredients_delete = 0"
+            ElseIf mode = "table" Then
+                sqlQuery = "SELECT table_id `ID`, table_name `Name`, seats_available `Seats Available`, IF(table_status = 1,'Active','Non-Active') `Status` FROM table t WHERE table_delete = 0"
+            ElseIf mode = "category" Then
+                sqlQuery = "SELECT category_id `ID`, category_name `Category`, IF(category_status = 1,'Active','Non-Active') `Status` FROM category c, menu m WHERE c.category_id = m.category_id AND menu_delete = 0"
             End If
             If cbAktif.Checked = True Then
                 sqlQuery += " AND menu_status = 1"
@@ -82,7 +88,6 @@ Public Class formInsert
     End Sub
 
     Private Sub dgAdmin_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgAdmin.CellClick
-        MsgBox(dgAdmin.CurrentCell.OwningColumn.Name)
         If dgAdmin.CurrentCell.OwningColumn.Name = "btEdt" Then
 
         ElseIf dgAdmin.CurrentCell.OwningColumn.Name = "btDel" Then
