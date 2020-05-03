@@ -103,11 +103,11 @@ Public Class formAdd
                 sqlConnect.Open()
                 sqlQuery = "UPDATE `" + formInsert.mode.ToString + "` SET " + formInsert.mode.ToString + "_name = '" + tbName.Text.ToString + "', " + formInsert.mode.ToString + "_status = '" + cmStat.SelectedIndex.ToString + "'"
                 If formInsert.mode = "menu" Then
-                    sqlQuery += " category_id = '" + cmCat.SelectedValue.ToString + "', sell_price = '" + tbPrice.Text.ToString + "'"
+                    sqlQuery += ", category_id = '" + cmCat.SelectedValue.ToString + "', sell_price = '" + tbPrice.Text.ToString + "'"
                 ElseIf formInsert.mode = "ingredients" Then
-                    sqlQuery += " `stocks` = '" + tbStock.Text.ToString + "'"
+                    sqlQuery += ", `stocks` = '" + tbStock.Text.ToString + "'"
                 ElseIf formInsert.mode = "table" Then
-                    sqlQuery += " seats_available = '" + cmSeat.Value.ToString + "'"
+                    sqlQuery += ", seats_available = '" + cmSeat.Value.ToString + "'"
                 End If
                 sqlQuery += " WHERE " + formInsert.mode.ToString + "_id = '" + tbID.Text.ToString + "';"
                 sqlCommand = New MySqlCommand(sqlQuery, sqlConnect)
@@ -119,6 +119,7 @@ Public Class formAdd
                 MsgBox(ex.Message)
             End Try
         End If
+        Me.Close()
     End Sub
 
     Sub autoID()
@@ -154,9 +155,13 @@ Public Class formAdd
         tbID.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("ID")).ToString
         tbName.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Name")).ToString
         ''' Menu
-        cmCat.SelectedText = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Category")).ToString
+        cmCat.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Category")).ToString
         tbPrice.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Price")).ToString
-        cmStat.SelectedText = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Status")).ToString
+        cmStat.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Status")).ToString
+        ''' Ingredient
+        tbStock.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Stock")).ToString
+        ''' Table
+        cmSeat.Value = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Seats Available")).ToString
     End Sub
     Sub generateObj()
         '''      VISIBILITY      '''

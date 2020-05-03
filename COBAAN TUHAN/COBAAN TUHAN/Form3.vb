@@ -55,10 +55,6 @@ Public Class formInsert
 
     Sub refreshDGV()
         Try
-            If dt_View.Columns.Count <> 0 Then
-                dgAdmin.Columns.Remove("btDel")
-                dgAdmin.Columns.Remove("btEdt")
-            End If
             dt_View = New DataTable
             If mode = "menu" Then
                 sqlQuery = "SELECT menu_id `ID`, menu_name `Name`, category_name `Category`, sell_price `Price`, IF(menu_status = 1,'Active','Non-Active') `Status` FROM category c, menu m WHERE c.category_id = m.category_id AND menu_delete = 0"
@@ -84,10 +80,10 @@ Public Class formInsert
             sqlAdapter = New MySqlDataAdapter(sqlCommand)
             sqlAdapter.Fill(dt_View)
             dgAdmin.DataSource = dt_View
-            dgAdmin.Columns.Add(btEdt)
-            dgAdmin.Columns.Add(btDel)
+            dgAdmin.Columns.Add(dgAdmin.Columns.Count, btEdt)
+            dgAdmin.Columns.Add(dgAdmin.Columns.Count, btDel)
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -119,13 +115,11 @@ Public Class formInsert
 
     Private Sub btAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
         formAdd.Show()
+        editmode = False
     End Sub
 
     Private Sub btHome_Click(sender As Object, e As EventArgs) Handles btHome.Click
         Me.Close()
     End Sub
 
-    Private Sub dgAdmin_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgAdmin.CellContentClick
-
-    End Sub
 End Class
