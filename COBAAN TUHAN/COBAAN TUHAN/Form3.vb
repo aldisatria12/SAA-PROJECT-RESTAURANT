@@ -55,7 +55,7 @@ Public Class formInsert
 
     Sub refreshDGV()
         Try
-            If dt_View.Columns.Count > 3 Then
+            If dt_View.Columns.Count <> 0 Then
                 dgAdmin.Columns.Remove("btDel")
                 dgAdmin.Columns.Remove("btEdt")
             End If
@@ -123,5 +123,9 @@ Public Class formInsert
 
     Private Sub btHome_Click(sender As Object, e As EventArgs) Handles btHome.Click
         Me.Close()
+    End Sub
+
+    Private Sub dgAdmin_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgAdmin.CellContentClick
+
     End Sub
 End Class

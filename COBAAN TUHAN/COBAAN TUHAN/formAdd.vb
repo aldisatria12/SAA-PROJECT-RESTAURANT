@@ -109,7 +109,7 @@ Public Class formAdd
                 ElseIf formInsert.mode = "table" Then
                     sqlQuery += " seats_available = '" + cmSeat.Value.ToString + "'"
                 End If
-                sqlQuery += "WHERE " + formInsert.mode.ToString + "_id = '" + tbID.Text.ToString + "';"
+                sqlQuery += " WHERE " + formInsert.mode.ToString + "_id = '" + tbID.Text.ToString + "';"
                 sqlCommand = New MySqlCommand(sqlQuery, sqlConnect)
                 sqlCommand.ExecuteNonQuery()
                 MsgBox("Updating " + formInsert.mode + " data : '" + tbID.Text + "' Success!")
