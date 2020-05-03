@@ -10,7 +10,10 @@ Public Class formInsert
     Public mode As String
     Dim btDel As New DataGridViewButtonColumn
     Dim btEdt As New DataGridViewButtonColumn
+    Public editmode As Boolean
     Private Sub formInsert_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Top = 0
+        Me.Left = 0
         ctMenu.Checked = True
         btDel.HeaderText = "Delete Data"
         btDel.Text = "Delete"
@@ -20,7 +23,6 @@ Public Class formInsert
         btEdt.Text = "Edit"
         btEdt.Name = "btEdt"
         btEdt.UseColumnTextForButtonValue = True
-        refreshDGV()
     End Sub
     Sub buttonradio(sender As Object, e As EventArgs) Handles ctKategorimenu.CheckedChanged, ctKursimeja.CheckedChanged, ctMenu.CheckedChanged, ctStokbahan.CheckedChanged
         If sender Is ctMenu And ctMenu.Checked = True Then
@@ -53,6 +55,10 @@ Public Class formInsert
 
     Sub refreshDGV()
         Try
+            If dt_View.Columns.Count > 3 Then
+                dgAdmin.Columns.Remove("btDel")
+                dgAdmin.Columns.Remove("btEdt")
+            End If
             dt_View = New DataTable
             If mode = "menu" Then
                 sqlQuery = "SELECT menu_id `ID`, menu_name `Name`, category_name `Category`, sell_price `Price`, IF(menu_status = 1,'Active','Non-Active') `Status` FROM category c, menu m WHERE c.category_id = m.category_id AND menu_delete = 0"
@@ -78,6 +84,8 @@ Public Class formInsert
             sqlAdapter = New MySqlDataAdapter(sqlCommand)
             sqlAdapter.Fill(dt_View)
             dgAdmin.DataSource = dt_View
+            dgAdmin.Columns.Add(btEdt)
+            dgAdmin.Columns.Add(btDel)
         Catch ex As Exception
 
         End Try
@@ -89,7 +97,8 @@ Public Class formInsert
 
     Private Sub dgAdmin_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgAdmin.CellClick
         If dgAdmin.CurrentCell.OwningColumn.Name = "btEdt" Then
-
+            editmode = True
+            formAdd.Show()
         ElseIf dgAdmin.CurrentCell.OwningColumn.Name = "btDel" Then
             If MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Try
@@ -110,5 +119,9 @@ Public Class formInsert
 
     Private Sub btAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
         formAdd.Show()
+    End Sub
+
+    Private Sub btHome_Click(sender As Object, e As EventArgs) Handles btHome.Click
+        Me.Close()
     End Sub
 End Class

@@ -25,18 +25,8 @@ Partial Class formAdd
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pbAdd = New System.Windows.Forms.PictureBox()
         Me.lbAdd = New System.Windows.Forms.Label()
-        Me.lbIDdd = New System.Windows.Forms.Label()
-        Me.lbNamaa = New System.Windows.Forms.Label()
-        Me.lbCatd = New System.Windows.Forms.Label()
-        Me.lbPriced = New System.Windows.Forms.Label()
-        Me.lbStatusd = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.tbIDd = New System.Windows.Forms.TextBox()
-        Me.tbNamad = New System.Windows.Forms.TextBox()
-        Me.tbPricde = New System.Windows.Forms.TextBox()
-        Me.cmStatussd = New System.Windows.Forms.ComboBox()
-        Me.dsdsdsdd = New System.Windows.Forms.ComboBox()
+        Me.btAdd = New System.Windows.Forms.Button()
+        Me.btBack = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -71,120 +61,23 @@ Partial Class formAdd
         Me.lbAdd.TabIndex = 2
         Me.lbAdd.Text = "Form Insert Menu"
         '
-        'lbIDdd
+        'btAdd
         '
-        Me.lbIDdd.AutoSize = True
-        Me.lbIDdd.BackColor = System.Drawing.Color.Transparent
-        Me.lbIDdd.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbIDdd.ForeColor = System.Drawing.Color.White
-        Me.lbIDdd.Location = New System.Drawing.Point(327, 135)
-        Me.lbIDdd.Name = "lbIDdd"
-        Me.lbIDdd.Size = New System.Drawing.Size(23, 19)
-        Me.lbIDdd.TabIndex = 3
-        Me.lbIDdd.Text = "ID"
+        Me.btAdd.Location = New System.Drawing.Point(331, 327)
+        Me.btAdd.Name = "btAdd"
+        Me.btAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btAdd.TabIndex = 8
+        Me.btAdd.Text = "Add"
+        Me.btAdd.UseVisualStyleBackColor = True
         '
-        'lbNamaa
+        'btBack
         '
-        Me.lbNamaa.AutoSize = True
-        Me.lbNamaa.BackColor = System.Drawing.Color.Transparent
-        Me.lbNamaa.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbNamaa.ForeColor = System.Drawing.Color.White
-        Me.lbNamaa.Location = New System.Drawing.Point(327, 173)
-        Me.lbNamaa.Name = "lbNamaa"
-        Me.lbNamaa.Size = New System.Drawing.Size(49, 19)
-        Me.lbNamaa.TabIndex = 4
-        Me.lbNamaa.Text = "Nama"
-        '
-        'lbCatd
-        '
-        Me.lbCatd.AutoSize = True
-        Me.lbCatd.BackColor = System.Drawing.Color.Transparent
-        Me.lbCatd.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCatd.ForeColor = System.Drawing.Color.White
-        Me.lbCatd.Location = New System.Drawing.Point(327, 209)
-        Me.lbCatd.Name = "lbCatd"
-        Me.lbCatd.Size = New System.Drawing.Size(72, 19)
-        Me.lbCatd.TabIndex = 5
-        Me.lbCatd.Text = "Category"
-        '
-        'lbPriced
-        '
-        Me.lbPriced.AutoSize = True
-        Me.lbPriced.BackColor = System.Drawing.Color.Transparent
-        Me.lbPriced.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbPriced.ForeColor = System.Drawing.Color.White
-        Me.lbPriced.Location = New System.Drawing.Point(327, 247)
-        Me.lbPriced.Name = "lbPriced"
-        Me.lbPriced.Size = New System.Drawing.Size(43, 19)
-        Me.lbPriced.TabIndex = 6
-        Me.lbPriced.Text = "Price"
-        '
-        'lbStatusd
-        '
-        Me.lbStatusd.AutoSize = True
-        Me.lbStatusd.BackColor = System.Drawing.Color.Transparent
-        Me.lbStatusd.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbStatusd.ForeColor = System.Drawing.Color.White
-        Me.lbStatusd.Location = New System.Drawing.Point(327, 283)
-        Me.lbStatusd.Name = "lbStatusd"
-        Me.lbStatusd.Size = New System.Drawing.Size(49, 19)
-        Me.lbStatusd.TabIndex = 7
-        Me.lbStatusd.Text = "Status"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(331, 327)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Add"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(566, 327)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Back"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'tbIDd
-        '
-        Me.tbIDd.Location = New System.Drawing.Point(431, 135)
-        Me.tbIDd.Name = "tbIDd"
-        Me.tbIDd.Size = New System.Drawing.Size(139, 20)
-        Me.tbIDd.TabIndex = 11
-        '
-        'tbNamad
-        '
-        Me.tbNamad.Location = New System.Drawing.Point(431, 173)
-        Me.tbNamad.Name = "tbNamad"
-        Me.tbNamad.Size = New System.Drawing.Size(139, 20)
-        Me.tbNamad.TabIndex = 12
-        '
-        'tbPricde
-        '
-        Me.tbPricde.Location = New System.Drawing.Point(431, 247)
-        Me.tbPricde.Name = "tbPricde"
-        Me.tbPricde.Size = New System.Drawing.Size(139, 20)
-        Me.tbPricde.TabIndex = 13
-        '
-        'cmStatussd
-        '
-        Me.cmStatussd.FormattingEnabled = True
-        Me.cmStatussd.Location = New System.Drawing.Point(431, 283)
-        Me.cmStatussd.Name = "cmStatussd"
-        Me.cmStatussd.Size = New System.Drawing.Size(139, 21)
-        Me.cmStatussd.TabIndex = 14
-        '
-        'dsdsdsdd
-        '
-        Me.dsdsdsdd.FormattingEnabled = True
-        Me.dsdsdsdd.Location = New System.Drawing.Point(431, 209)
-        Me.dsdsdsdd.Name = "dsdsdsdd"
-        Me.dsdsdsdd.Size = New System.Drawing.Size(139, 21)
-        Me.dsdsdsdd.TabIndex = 15
+        Me.btBack.Location = New System.Drawing.Point(566, 327)
+        Me.btBack.Name = "btBack"
+        Me.btBack.Size = New System.Drawing.Size(75, 23)
+        Me.btBack.TabIndex = 9
+        Me.btBack.Text = "Back"
+        Me.btBack.UseVisualStyleBackColor = True
         '
         'formAdd
         '
@@ -193,23 +86,16 @@ Partial Class formAdd
         Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources._444634_PEMTQB_849
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(808, 520)
-        Me.Controls.Add(Me.dsdsdsdd)
-        Me.Controls.Add(Me.cmStatussd)
-        Me.Controls.Add(Me.tbPricde)
-        Me.Controls.Add(Me.tbNamad)
-        Me.Controls.Add(Me.tbIDd)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.lbStatusd)
-        Me.Controls.Add(Me.lbPriced)
-        Me.Controls.Add(Me.lbCatd)
-        Me.Controls.Add(Me.lbNamaa)
-        Me.Controls.Add(Me.lbIDdd)
+        Me.Controls.Add(Me.btBack)
+        Me.Controls.Add(Me.btAdd)
         Me.Controls.Add(Me.lbAdd)
         Me.Controls.Add(Me.pbAdd)
         Me.Controls.Add(Me.PictureBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "formAdd"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "formAdd"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbAdd, System.ComponentModel.ISupportInitialize).EndInit()
@@ -221,16 +107,6 @@ Partial Class formAdd
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents pbAdd As PictureBox
     Friend WithEvents lbAdd As Label
-    Friend WithEvents lbIDdd As Label
-    Friend WithEvents lbNamaa As Label
-    Friend WithEvents lbCatd As Label
-    Friend WithEvents lbPriced As Label
-    Friend WithEvents lbStatusd As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents tbIDd As TextBox
-    Friend WithEvents tbNamad As TextBox
-    Friend WithEvents tbPricde As TextBox
-    Friend WithEvents cmStatussd As ComboBox
-    Friend WithEvents dsdsdsdd As ComboBox
+    Friend WithEvents btAdd As Button
+    Friend WithEvents btBack As Button
 End Class

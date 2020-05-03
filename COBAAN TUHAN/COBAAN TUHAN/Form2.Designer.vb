@@ -32,7 +32,7 @@ Partial Class formAdmin
         'btInsertdata
         '
         Me.btInsertdata.Location = New System.Drawing.Point(272, 321)
-        Me.btInsertdata.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btInsertdata.Margin = New System.Windows.Forms.Padding(2)
         Me.btInsertdata.Name = "btInsertdata"
         Me.btInsertdata.Size = New System.Drawing.Size(255, 99)
         Me.btInsertdata.TabIndex = 0
@@ -42,7 +42,7 @@ Partial Class formAdmin
         'btLaporanpengeluaran
         '
         Me.btLaporanpengeluaran.Location = New System.Drawing.Point(720, 321)
-        Me.btLaporanpengeluaran.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btLaporanpengeluaran.Margin = New System.Windows.Forms.Padding(2)
         Me.btLaporanpengeluaran.Name = "btLaporanpengeluaran"
         Me.btLaporanpengeluaran.Size = New System.Drawing.Size(255, 99)
         Me.btLaporanpengeluaran.TabIndex = 1
@@ -52,7 +52,7 @@ Partial Class formAdmin
         'btLogout
         '
         Me.btLogout.Location = New System.Drawing.Point(551, 610)
-        Me.btLogout.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btLogout.Margin = New System.Windows.Forms.Padding(2)
         Me.btLogout.Name = "btLogout"
         Me.btLogout.Size = New System.Drawing.Size(144, 40)
         Me.btLogout.TabIndex = 2
@@ -62,7 +62,7 @@ Partial Class formAdmin
         'btPenjualan
         '
         Me.btPenjualan.Location = New System.Drawing.Point(720, 470)
-        Me.btPenjualan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btPenjualan.Margin = New System.Windows.Forms.Padding(2)
         Me.btPenjualan.Name = "btPenjualan"
         Me.btPenjualan.Size = New System.Drawing.Size(94, 59)
         Me.btPenjualan.TabIndex = 3
@@ -73,7 +73,7 @@ Partial Class formAdmin
         'btPembelian
         '
         Me.btPembelian.Location = New System.Drawing.Point(881, 470)
-        Me.btPembelian.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btPembelian.Margin = New System.Windows.Forms.Padding(2)
         Me.btPembelian.Name = "btPembelian"
         Me.btPembelian.Size = New System.Drawing.Size(94, 59)
         Me.btPembelian.TabIndex = 4
@@ -94,7 +94,7 @@ Partial Class formAdmin
         Me.Controls.Add(Me.btLaporanpengeluaran)
         Me.Controls.Add(Me.btInsertdata)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "formAdmin"
         Me.Text = "Form2"
         Me.ResumeLayout(False)

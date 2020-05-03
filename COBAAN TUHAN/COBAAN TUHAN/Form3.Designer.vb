@@ -30,6 +30,7 @@ Partial Class formInsert
         Me.dgAdmin = New System.Windows.Forms.DataGridView()
         Me.btAdd = New System.Windows.Forms.Button()
         Me.cbAktif = New System.Windows.Forms.CheckBox()
+        Me.btHome = New System.Windows.Forms.Button()
         CType(Me.dgAdmin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -102,16 +103,27 @@ Partial Class formInsert
         'cbAktif
         '
         Me.cbAktif.AutoSize = True
-        Me.cbAktif.BackColor = System.Drawing.Color.White
+        Me.cbAktif.BackColor = System.Drawing.Color.Transparent
         Me.cbAktif.Checked = True
         Me.cbAktif.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbAktif.Location = New System.Drawing.Point(9, 113)
+        Me.cbAktif.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAktif.ForeColor = System.Drawing.Color.White
+        Me.cbAktif.Location = New System.Drawing.Point(9, 111)
         Me.cbAktif.Margin = New System.Windows.Forms.Padding(2)
         Me.cbAktif.Name = "cbAktif"
-        Me.cbAktif.Size = New System.Drawing.Size(64, 17)
+        Me.cbAktif.Size = New System.Drawing.Size(80, 24)
         Me.cbAktif.TabIndex = 7
         Me.cbAktif.Text = "ACTIVE"
         Me.cbAktif.UseVisualStyleBackColor = False
+        '
+        'btHome
+        '
+        Me.btHome.Location = New System.Drawing.Point(1146, 12)
+        Me.btHome.Name = "btHome"
+        Me.btHome.Size = New System.Drawing.Size(122, 107)
+        Me.btHome.TabIndex = 8
+        Me.btHome.Text = "HOME"
+        Me.btHome.UseVisualStyleBackColor = True
         '
         'formInsert
         '
@@ -120,6 +132,7 @@ Partial Class formInsert
         Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.khot_dog_sosiski_bulki_ketchup_sous_sousy_tomaty_zelen_stol
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.btHome)
         Me.Controls.Add(Me.cbAktif)
         Me.Controls.Add(Me.btAdd)
         Me.Controls.Add(Me.dgAdmin)
@@ -146,4 +159,5 @@ Partial Class formInsert
     Friend WithEvents dgAdmin As DataGridView
     Friend WithEvents btAdd As Button
     Friend WithEvents cbAktif As CheckBox
+    Friend WithEvents btHome As Button
 End Class
