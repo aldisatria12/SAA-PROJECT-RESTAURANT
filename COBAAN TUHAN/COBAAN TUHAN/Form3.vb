@@ -59,25 +59,25 @@ Public Class formInsert
             ElseIf mode = "ingredients" Then
                 sqlQuery = "SELECT ingredients_id `ID`, ingredients_name `Name`, stocks `Stock`, IF(ingredients_status = 1,'Active','Non-Active') `Status` FROM ingredients i WHERE ingredients_delete = 0"
             ElseIf mode = "table" Then
-                sqlQuery = "SELECT table_id `ID`, table_name `Name`, seats_available `Seats Available`, IF(table_status = 1,'Active','Non-Active') `Status` FROM table t WHERE table_delete = 0"
+                sqlQuery = "SELECT table_id `ID`, table_name `Name`, seats_available `Seats Available`, IF(table_status = 1,'Active','Non-Active') `Status` FROM `table` t WHERE table_delete = 0"
             ElseIf mode = "category" Then
-                sqlQuery = "SELECT category_id `ID`, category_name `Category`, IF(category_status = 1,'Active','Non-Active') `Status` FROM category c, menu m WHERE c.category_id = m.category_id AND menu_delete = 0"
+                sqlQuery = "SELECT category_id `ID`, category_name `Category`, IF(category_status = 1,'Active','Non-Active') `Status` FROM `category` c WHERE category_delete = 0"
             End If
-            If cbAktif.Checked = True Then
-                sqlQuery += " AND menu_status = 1"
-            ElseIf cbAktif.Checked = False Then
-                sqlQuery += " AND menu_status = 0"
-            End If
-            If tbSearch.Text <> "" Then
-                sqlQuery += " HAVING (`Name` LIKE '%" + tbSearch.Text + "%' OR `Name` LIKE '" + tbSearch.Text + "%')"
+            If mode <> "" Then
+                If cbAktif.Checked = True Then
+                    sqlQuery += " AND `" + mode.ToString + "_status` = 1"
+                ElseIf cbAktif.Checked = False Then
+                    sqlQuery += " AND `" + mode.ToString + "_status` = 0"
+                End If
+                If tbSearch.Text <> "" Then
+                    sqlQuery += " HAVING (`Name` LIKE '%" + tbSearch.Text + "%' OR `Name` LIKE '" + tbSearch.Text + "%')"
+                End If
             End If
             sqlQuery += ";"
             sqlCommand = New MySqlCommand(sqlQuery, sqlConnect)
             sqlAdapter = New MySqlDataAdapter(sqlCommand)
             sqlAdapter.Fill(dt_View)
             dgAdmin.DataSource = dt_View
-            dgAdmin.Columns.Insert(dgAdmin.Columns.Count, btEdt)
-            dgAdmin.Columns.Insert(dgAdmin.Columns.Count, btDel)
         Catch ex As Exception
 
         End Try
