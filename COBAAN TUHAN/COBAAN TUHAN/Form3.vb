@@ -63,7 +63,7 @@ Public Class formInsert
             ElseIf mode = "table" Then
                 sqlQuery = "SELECT table_id `ID`, table_name `Name`, seats_available `Seats Available`, IF(table_status = 1,'Active','Non-Active') `Status` FROM `table` t WHERE table_delete = 0"
             ElseIf mode = "category" Then
-                sqlQuery = "SELECT category_id `ID`, category_name `Category`, IF(category_status = 1,'Active','Non-Active') `Status` FROM `category` c WHERE category_delete = 0"
+                sqlQuery = "SELECT category_id `ID`, category_name `Name`, IF(category_status = 1,'Active','Non-Active') `Status` FROM `category` c WHERE category_delete = 0"
             End If
             If mode <> "" Then
                 If cbAktif.Checked = True Then
@@ -80,10 +80,9 @@ Public Class formInsert
             sqlAdapter = New MySqlDataAdapter(sqlCommand)
             sqlAdapter.Fill(dt_View)
             dgAdmin.DataSource = dt_View
-            dgAdmin.Columns.Add(dgAdmin.Columns.Count, btEdt)
-            dgAdmin.Columns.Add(dgAdmin.Columns.Count, btDel)
+            dgAdmin.Columns.Add(btEdt)
+            dgAdmin.Columns.Add(btDel)
         Catch ex As Exception
-            MsgBox(ex.Message)
         End Try
     End Sub
 

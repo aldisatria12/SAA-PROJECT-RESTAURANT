@@ -119,6 +119,7 @@ Public Class formAdd
                 MsgBox(ex.Message)
             End Try
         End If
+        formInsert.refreshDGV()
         Me.Close()
     End Sub
 
@@ -154,14 +155,18 @@ Public Class formAdd
     Sub fillingData()
         tbID.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("ID")).ToString
         tbName.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Name")).ToString
-        ''' Menu
-        cmCat.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Category")).ToString
-        tbPrice.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Price")).ToString
         cmStat.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Status")).ToString
-        ''' Ingredient
-        tbStock.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Stock")).ToString
-        ''' Table
-        cmSeat.Value = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Seats Available")).ToString
+        ''' Menu
+        If formInsert.mode = "menu" Then
+            cmCat.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Category")).ToString
+            tbPrice.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Price")).ToString
+        ElseIf formInsert.mode = "ingredients" Then
+            ''' Ingredient
+            tbStock.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Stock")).ToString
+        ElseIf formInsert.mode = "table" Then
+            ''' Table
+            cmSeat.Value = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Seats Available")).ToString
+        End If
     End Sub
     Sub generateObj()
         '''      VISIBILITY      '''
