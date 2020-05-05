@@ -20,4 +20,14 @@
         Me.Top = 0
         Me.Left = 0
     End Sub
+
+    Private Sub btPenjualan_Click(sender As Object, e As EventArgs) Handles btPenjualan.Click
+        Formpenjualan.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub btPembelian_Click(sender As Object, e As EventArgs) Handles btPembelian.Click
+        Formpembelian.Show()
+        Me.Close()
+    End Sub
 End Class
