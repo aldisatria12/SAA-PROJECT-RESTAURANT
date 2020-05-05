@@ -47,5 +47,15 @@ COBAAN TUHAN
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.Logout1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.wallpaper_wiki_Download_Images_Food_HD_PIC_WPD006571">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

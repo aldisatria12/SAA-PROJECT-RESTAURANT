@@ -88,6 +88,12 @@
     <Compile Include="FluentDesignForm1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FluentDesignForm2.Designer.vb">
+      <DependentUpon>FluentDesignForm2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FluentDesignForm2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +111,6 @@
       <DependentUpon>Form3.vb</DependentUpon>
     </Compile>
     <Compile Include="Form3.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form4.Designer.vb">
-      <DependentUpon>Form4.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form4.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formAdd.Designer.vb">
@@ -146,6 +146,9 @@
     <EmbeddedResource Include="FluentDesignForm1.resx">
       <DependentUpon>FluentDesignForm1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FluentDesignForm2.resx">
+      <DependentUpon>FluentDesignForm2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -154,9 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formAdd.resx">
       <DependentUpon>formAdd.vb</DependentUpon>
@@ -197,6 +197,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btTemplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaper.wiki-Download-Images-Food-HD-PIC-WPD006571.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
