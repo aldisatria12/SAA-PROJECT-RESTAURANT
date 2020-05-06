@@ -372,3 +372,14 @@ E:\SAA\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.F
 E:\SAA\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.FormKas.resources
 E:\SAA\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.FormUtamaKasir.resources
 E:\SAA\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.FormPay.resources
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\bin\Debug\DevExpress.XtraBars.v19.2.dll
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\bin\Debug\DevExpress.XtraBars.v19.2.xml
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\bin\Debug\de\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\bin\Debug\ja\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\bin\Debug\ru\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.Formpenjualan.resources
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.Formpembelian.resources
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.FormKas.resources
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.FormUtamaKasir.resources
+C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.FormPay.resources

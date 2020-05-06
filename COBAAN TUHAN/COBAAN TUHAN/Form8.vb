@@ -48,6 +48,8 @@ Public Class FormPay
             pb(i, 1).Left = (110 * i) + 450
             pb(i, 1).BackColor = Color.Red
             pb(i, 1).Parent = Me
+            AddHandler pb(i, 0).Click, AddressOf clickpb
+            AddHandler pb(i, 1).Click, AddressOf clickpb
         Next
         For i = 0 To 4
             lb(i, 0) = New Label
@@ -71,18 +73,16 @@ Public Class FormPay
         refrespb()
         refreshlb()
 
-        AddHandler pb(4, 1).Click, AddressOf clickpb
     End Sub
 
     Sub clickpb(sender As Object, e As EventArgs)
         Try
             sqlconnect.Open()
-            sqlQuery = "Update() `table`
-SET table_status = 1
-WHERE table_id = '" + sender.tag + "'"
-            sqlcommand = New MySqlCommand(sqlQuery, sqlconnect)
+            sqlquery = "Update `table` SET table_status = 1 WHERE table_id = '" + sender.tag + "';"
+            sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
             sqlcommand.ExecuteNonQuery()
             sqlconnect.Close()
+            MsgBox(sender.tag + "Is not available now!")
         Catch ex As Exception
             sqlconnect.Close()
             MsgBox(ex.Message)
@@ -114,7 +114,7 @@ WHERE table_id = '" + sender.tag + "'"
                             pb(i - 5, 1).Visible = True
                             pb(i - 5, 1).Tag = dt_table.Rows(i + (10 * (numArea.Value - 1)))("table_id").ToString
                         End If
-                    ElseIf dt_table.Rows(i + (10 * (Numarea.Value - 1)))("table_status").ToString = "0" Then
+                    ElseIf dt_table.Rows(i + (10 * (numArea.Value - 1)))("table_status").ToString = "0" Then
                         If i < 5 Then
                             pb(i, 0).BackColor = Color.Red
                             pb(i, 0).Visible = True
@@ -135,26 +135,14 @@ WHERE table_id = '" + sender.tag + "'"
         Try
             For i = 0 To 9
                 If dt_table.Rows.Count > 0 Then
-                    If dt_table.Rows(i + (10 * (numArea.Value - 1)))("table_status").ToString = "1" Then
-                        If i < 5 Then
-                            lb(i, 0).ForeColor = Color.Blue
-                            lb(i, 0).Visible = True
-                            lb(i, 0).Text = "belum di pesan"
-                        Else
-                            lb(i - 5, 1).ForeColor = Color.Blue
-                            lb(i - 5, 1).Visible = True
-                            lb(i - 5, 1).Text = "belum di pesan"
-                        End If
-                    ElseIf dt_table.Rows(i + (10 * (numArea.Value - 1)))("table_status").ToString = "0" Then
-                        If i < 5 Then
-                            lb(i, 0).ForeColor = Color.Black
-                            lb(i, 0).Visible = True
-                            lb(i, 0).Text = "sudah di pesan"
-                        Else
-                            lb(i - 5, 1).ForeColor = Color.Black
-                            lb(i - 5, 1).Visible = True
-                            lb(i - 5, 1).Text = "sudah di pesan"
-                        End If
+                    If i < 5 Then
+                        lb(i, 0).ForeColor = Color.Blue
+                        lb(i, 0).Visible = True
+                        lb(i, 0).Text = dt_table.Rows(i + (10 * (numArea.Value - 1)))("seats_available").ToString
+                    Else
+                        lb(i - 5, 1).ForeColor = Color.Blue
+                        lb(i - 5, 1).Visible = True
+                        lb(i - 5, 1).Text = dt_table.Rows(i + (10 * (numArea.Value - 1)))("seats_available").ToString
                     End If
                 End If
             Next
