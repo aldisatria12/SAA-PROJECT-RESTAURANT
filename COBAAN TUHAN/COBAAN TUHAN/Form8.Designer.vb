@@ -26,7 +26,9 @@ Partial Class FormPay
         Me.MenuKas = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.MenuPay = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.MenuLogout = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.numArea = New System.Windows.Forms.NumericUpDown()
         CType(Me.MenuUtama, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numArea, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuUtama
@@ -37,12 +39,11 @@ Partial Class FormPay
         Me.MenuUtama.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuUtama.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.MenuKas, Me.MenuPay, Me.MenuLogout})
         Me.MenuUtama.Location = New System.Drawing.Point(0, 0)
-        Me.MenuUtama.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuUtama.Name = "MenuUtama"
         Me.MenuUtama.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay
         Me.MenuUtama.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized
         Me.MenuUtama.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden
-        Me.MenuUtama.Size = New System.Drawing.Size(48, 720)
+        Me.MenuUtama.Size = New System.Drawing.Size(72, 720)
         Me.MenuUtama.TabIndex = 4
         Me.MenuUtama.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -76,16 +77,27 @@ Partial Class FormPay
         Me.MenuLogout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.MenuLogout.Text = "Logout"
         '
+        'numArea
+        '
+        Me.numArea.Location = New System.Drawing.Point(1113, 156)
+        Me.numArea.Name = "numArea"
+        Me.numArea.Size = New System.Drawing.Size(155, 26)
+        Me.numArea.TabIndex = 5
+        Me.numArea.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
         'FormPay
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.numArea)
         Me.Controls.Add(Me.MenuUtama)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "FormPay"
         Me.Text = "Form8"
         CType(Me.MenuUtama, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numArea, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -94,4 +106,5 @@ Partial Class FormPay
     Friend WithEvents MenuKas As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents MenuPay As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents MenuLogout As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents numArea As NumericUpDown
 End Class
