@@ -1,10 +1,11 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports DevExpress.XtraEditors.Senders
+Imports MySql.Data.MySqlClient
 Public Class FormPay
     Dim constring As String = "server=localhost;uid=root;password=;database=restaurant"
     Dim sqlconnect As New MySqlConnection(constring)
     Dim sqlcommand As New MySqlCommand
     Dim sqladapter As New MySqlDataAdapter
-    Dim sqlquerry As String
+    Dim sqlquery As String
     Dim pb(4, 1) As PictureBox
     Dim lb(4, 1) As Label
     Dim dt_table As New DataTable
@@ -14,19 +15,19 @@ Public Class FormPay
         Me.Top = 0
         Try
             dt_table = New DataTable
-            sqlquerry = "select * from `table`"
-            sqlcommand = New MySqlCommand(sqlquerry, sqlconnect)
+            sqlquery = "select * from `table`"
+            sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
             sqladapter = New MySqlDataAdapter(sqlcommand)
             sqladapter.Fill(dt_table)
         Catch ex As Exception
 
         End Try
-        If dt_table.Rows.Count Mod 10 <> 0 Then
+        If dt_table.Rows.Count Mod 10 = 0 Then
             numArea.Minimum = 1
-            numArea.Maximum = (dt_table.Rows.Count / 10)
+            numArea.Maximum = (dt_table.Rows.Count \ 10)
         Else
             numArea.Minimum = 1
-            numArea.Maximum = (dt_table.Rows.Count / 10) + 1
+            numArea.Maximum = (dt_table.Rows.Count \ 10) + 1
         End If
 
 
@@ -36,7 +37,7 @@ Public Class FormPay
             pb(i, 0).Top = 100
             pb(i, 0).Width = 100
             pb(i, 0).Height = 50
-            pb(i, 0).Left = 110 * i
+            pb(i, 0).Left = (110 * i) + 450
             pb(i, 0).BackColor = Color.Red
             pb(i, 0).Parent = Me
             pb(i, 1) = New PictureBox
@@ -44,7 +45,7 @@ Public Class FormPay
             pb(i, 1).Top = 200
             pb(i, 1).Width = 100
             pb(i, 1).Height = 50
-            pb(i, 1).Left = 110 * i
+            pb(i, 1).Left = (110 * i) + 450
             pb(i, 1).BackColor = Color.Red
             pb(i, 1).Parent = Me
         Next
@@ -69,7 +70,28 @@ Public Class FormPay
         Next
         refrespb()
         refreshlb()
+
+        AddHandler pb(4, 1).Click, AddressOf clickpb
     End Sub
+
+    Sub clickpb(sender As Object, e As EventArgs)
+        Try
+            sqlconnect.Open()
+            sqlQuery = "Update() `table`
+SET table_status = 1
+WHERE table_id = '" + sender.tag + "'"
+            sqlcommand = New MySqlCommand(sqlQuery, sqlconnect)
+            sqlcommand.ExecuteNonQuery()
+            sqlconnect.Close()
+        Catch ex As Exception
+            sqlconnect.Close()
+            MsgBox(ex.Message)
+        End Try
+        refrespb()
+        refreshlb()
+    End Sub
+
+
     Sub refrespb()
         If dt_table.Rows.Count <> 0 Then
             For i = 0 To 4
@@ -86,17 +108,21 @@ Public Class FormPay
                         If i < 5 Then
                             pb(i, 0).BackColor = Color.Green
                             pb(i, 0).Visible = True
+                            pb(i, 0).Tag = dt_table.Rows(i + (10 * (numArea.Value - 1)))("table_id").ToString
                         Else
                             pb(i - 5, 1).BackColor = Color.Green
                             pb(i - 5, 1).Visible = True
+                            pb(i - 5, 1).Tag = dt_table.Rows(i + (10 * (numArea.Value - 1)))("table_id").ToString
                         End If
                     ElseIf dt_table.Rows(i + (10 * (Numarea.Value - 1)))("table_status").ToString = "0" Then
                         If i < 5 Then
                             pb(i, 0).BackColor = Color.Red
                             pb(i, 0).Visible = True
+                            pb(i, 0).Tag = dt_table.Rows(i + (10 * (numArea.Value - 1)))("table_id").ToString
                         Else
                             pb(i - 5, 1).BackColor = Color.Red
                             pb(i - 5, 1).Visible = True
+                            pb(i - 5, 1).Tag = dt_table.Rows(i + (10 * (numArea.Value - 1)))("table_id").ToString
                         End If
                     End If
                 End If

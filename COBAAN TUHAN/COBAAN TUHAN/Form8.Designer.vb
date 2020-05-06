@@ -79,7 +79,7 @@ Partial Class FormPay
         '
         'numArea
         '
-        Me.numArea.Location = New System.Drawing.Point(1113, 156)
+        Me.numArea.Location = New System.Drawing.Point(1099, 46)
         Me.numArea.Name = "numArea"
         Me.numArea.Size = New System.Drawing.Size(155, 26)
         Me.numArea.TabIndex = 5
