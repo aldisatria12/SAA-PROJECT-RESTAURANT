@@ -37,7 +37,7 @@ Public Class FormPay
             pb(i, 0).Top = 100
             pb(i, 0).Width = 100
             pb(i, 0).Height = 50
-            pb(i, 0).Left = (110 * i) + 450
+            pb(i, 0).Left = (110 * i) + 300
             pb(i, 0).BackColor = Color.Red
             pb(i, 0).Parent = Me
             pb(i, 1) = New PictureBox
@@ -45,7 +45,7 @@ Public Class FormPay
             pb(i, 1).Top = 200
             pb(i, 1).Width = 100
             pb(i, 1).Height = 50
-            pb(i, 1).Left = (110 * i) + 450
+            pb(i, 1).Left = (110 * i) + 300
             pb(i, 1).BackColor = Color.Red
             pb(i, 1).Parent = Me
             AddHandler pb(i, 0).Click, AddressOf clickpb
@@ -56,7 +56,7 @@ Public Class FormPay
             lb(i, 0).Top = 150
             lb(i, 0).Width = 100
             lb(i, 0).Height = 50
-            lb(i, 0).Left = 110 * i
+            lb(i, 0).Left = (110 * i) + 320
             lb(i, 0).Font = New Font("Segoe UI", 10, FontStyle.Bold)
             lb(i, 0).Text = "available"
             lb(i, 0).Parent = Me
@@ -65,8 +65,8 @@ Public Class FormPay
             lb(i, 1).Top = 270
             lb(i, 1).Width = 100
             lb(i, 1).Height = 50
-            lb(i, 1).Left = 110 * i
-            lb(i, 0).Font = New Font("Segoe UI", 10, FontStyle.Bold)
+            lb(i, 1).Left = (110 * i) + 320
+            lb(i, 1).Font = New Font("Segoe UI", 10, FontStyle.Bold)
             lb(i, 1).Text = "available"
             lb(i, 1).Parent = Me
         Next
@@ -138,11 +138,11 @@ Public Class FormPay
                     If i < 5 Then
                         lb(i, 0).ForeColor = Color.Blue
                         lb(i, 0).Visible = True
-                        lb(i, 0).Text = dt_table.Rows(i + (10 * (numArea.Value - 1)))("seats_available").ToString
+                        lb(i, 0).Text = "seats" + dt_table.Rows(i + (10 * (numArea.Value - 1)))("seats_available").ToString
                     Else
                         lb(i - 5, 1).ForeColor = Color.Blue
                         lb(i - 5, 1).Visible = True
-                        lb(i - 5, 1).Text = dt_table.Rows(i + (10 * (numArea.Value - 1)))("seats_available").ToString
+                        lb(i - 5, 1).Text = "seats" + dt_table.Rows(i + (10 * (numArea.Value - 1)))("seats_available").ToString
                     End If
                 End If
             Next
@@ -160,9 +160,7 @@ Public Class FormPay
     End Sub
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles numArea.ValueChanged
-        If numArea.Value > 0 And numArea.Value < 4 Then
-            refrespb()
-            refreshlb()
-        End If
+        refrespb()
+        refreshlb()
     End Sub
 End Class
