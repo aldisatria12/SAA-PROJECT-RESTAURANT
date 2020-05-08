@@ -127,16 +127,28 @@
   <data name="444634-PEMTQB-849" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\444634-PEMTQB-849.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BG_Form_Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BG_Form_Admin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="khot-dog-sosiski-bulki-ketchup-sous-sousy-tomaty-zelen-stol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\khot-dog-sosiski-bulki-ketchup-sous-sousy-tomaty-zelen-stol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="wallpaper.wiki-Download-Images-Food-HD-PIC-WPD006571" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wallpaper.wiki-Download-Images-Food-HD-PIC-WPD006571.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logout1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wallpaper.wiki-Download-Images-Food-HD-PIC-WPD006571" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wallpaper.wiki-Download-Images-Food-HD-PIC-WPD006571.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="how-to-make-a-png-an-icon-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\how-to-make-a-png-an-icon-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

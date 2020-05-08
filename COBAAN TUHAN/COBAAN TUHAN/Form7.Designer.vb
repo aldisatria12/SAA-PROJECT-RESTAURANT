@@ -26,7 +26,10 @@ Partial Class FormUtamaKasir
         Me.MenuKas = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.MenuPay = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.MenuLogout = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.LbUser = New System.Windows.Forms.Label()
+        Me.PBpembelian = New System.Windows.Forms.PictureBox()
         CType(Me.MenuUtama, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBpembelian, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuUtama
@@ -76,17 +79,43 @@ Partial Class FormUtamaKasir
         Me.MenuLogout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.MenuLogout.Text = "Logout"
         '
+        'LbUser
+        '
+        Me.LbUser.AutoSize = True
+        Me.LbUser.BackColor = System.Drawing.Color.Transparent
+        Me.LbUser.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbUser.Location = New System.Drawing.Point(1202, 58)
+        Me.LbUser.Name = "LbUser"
+        Me.LbUser.Size = New System.Drawing.Size(47, 21)
+        Me.LbUser.TabIndex = 20
+        Me.LbUser.Text = "Kasir"
+        '
+        'PBpembelian
+        '
+        Me.PBpembelian.BackColor = System.Drawing.Color.Transparent
+        Me.PBpembelian.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.btTemplate
+        Me.PBpembelian.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PBpembelian.Location = New System.Drawing.Point(1110, 29)
+        Me.PBpembelian.Name = "PBpembelian"
+        Me.PBpembelian.Size = New System.Drawing.Size(227, 73)
+        Me.PBpembelian.TabIndex = 19
+        Me.PBpembelian.TabStop = False
+        '
         'FormUtamaKasir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.LbUser)
+        Me.Controls.Add(Me.PBpembelian)
         Me.Controls.Add(Me.MenuUtama)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormUtamaKasir"
         Me.Text = "Form7"
         CType(Me.MenuUtama, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBpembelian, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -94,4 +123,6 @@ Partial Class FormUtamaKasir
     Friend WithEvents MenuKas As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents MenuPay As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents MenuLogout As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents LbUser As Label
+    Friend WithEvents PBpembelian As PictureBox
 End Class

@@ -42,12 +42,32 @@ COBAAN TUHAN
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.close">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.how_to_make_a_png_an_icon_2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:COBAAN_TUHAN.My.Resources.Resources.khot_dog_sosiski_bulki_ketchup_sous_sousy_tomaty_zelen_stol">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:COBAAN_TUHAN.My.Resources.Resources.Logout1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.minus">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.plus">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

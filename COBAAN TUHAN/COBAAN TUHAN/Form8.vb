@@ -9,7 +9,7 @@ Public Class FormPay
     Dim pb(4, 1) As PictureBox
     Dim lb(4, 1) As Label
     Dim dt_table As New DataTable
-    Private Sub FormPay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Sub FormPay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MenuPay.Enabled = False
         Me.Left = 0
         Me.Top = 0
@@ -76,17 +76,23 @@ Public Class FormPay
     End Sub
 
     Sub clickpb(sender As Object, e As EventArgs)
-        Try
-            sqlconnect.Open()
-            sqlquery = "Update `table` SET table_status = 1 WHERE table_id = '" + sender.tag + "';"
-            sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
-            sqlcommand.ExecuteNonQuery()
-            sqlconnect.Close()
-            MsgBox(sender.tag + "Is not available now!")
-        Catch ex As Exception
-            sqlconnect.Close()
-            MsgBox(ex.Message)
-        End Try
+        If LbUser.Text = "Waiter" Then
+            Try
+                FormCustomer.Q = sender.tag.ToString
+                FormCustomer.dtCustomer = New DataTable
+                sqlquery = "select customer_id, customer_name from customer"
+                sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
+                sqladapter = New MySqlDataAdapter(sqlcommand)
+                sqladapter.Fill(FormCustomer.dtCustomer)
+                FormCustomer.LbTable.Text = sender.tag.ToString.Substring(2, 2)
+                FormCustomer.TbCust.Text = ""
+                FormCustomer.ShowDialog()
+            Catch ex As Exception
+                sqlconnect.Close()
+                MsgBox(ex.Message)
+            End Try
+
+        End If
         refrespb()
         refreshlb()
     End Sub
@@ -162,5 +168,17 @@ Public Class FormPay
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles numArea.ValueChanged
         refrespb()
         refreshlb()
+    End Sub
+
+    Sub isiDatatable()
+        Try
+            dt_table = New DataTable
+            sqlquery = "select * from `table`"
+            sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
+            sqladapter = New MySqlDataAdapter(sqlcommand)
+            sqladapter.Fill(dt_table)
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
