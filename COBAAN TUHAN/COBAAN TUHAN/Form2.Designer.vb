@@ -26,7 +26,8 @@ Partial Class formAdmin
         Me.btLaporanpengeluaran = New System.Windows.Forms.Button()
         Me.btLogout = New System.Windows.Forms.Button()
         Me.btPenjualan = New System.Windows.Forms.Button()
-        Me.btPembelian = New System.Windows.Forms.Button()
+        Me.BTstock = New System.Windows.Forms.Button()
+        Me.BTcustomer = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btInsertdata
@@ -46,7 +47,7 @@ Partial Class formAdmin
         Me.btLaporanpengeluaran.Name = "btLaporanpengeluaran"
         Me.btLaporanpengeluaran.Size = New System.Drawing.Size(255, 99)
         Me.btLaporanpengeluaran.TabIndex = 1
-        Me.btLaporanpengeluaran.Text = "LAPORAN PENGELUARAN"
+        Me.btLaporanpengeluaran.Text = "LAPORAN"
         Me.btLaporanpengeluaran.UseVisualStyleBackColor = True
         '
         'btLogout
@@ -61,7 +62,7 @@ Partial Class formAdmin
         '
         'btPenjualan
         '
-        Me.btPenjualan.Location = New System.Drawing.Point(720, 470)
+        Me.btPenjualan.Location = New System.Drawing.Point(660, 452)
         Me.btPenjualan.Margin = New System.Windows.Forms.Padding(2)
         Me.btPenjualan.Name = "btPenjualan"
         Me.btPenjualan.Size = New System.Drawing.Size(94, 59)
@@ -70,16 +71,27 @@ Partial Class formAdmin
         Me.btPenjualan.UseVisualStyleBackColor = True
         Me.btPenjualan.Visible = False
         '
-        'btPembelian
+        'BTstock
         '
-        Me.btPembelian.Location = New System.Drawing.Point(881, 470)
-        Me.btPembelian.Margin = New System.Windows.Forms.Padding(2)
-        Me.btPembelian.Name = "btPembelian"
-        Me.btPembelian.Size = New System.Drawing.Size(94, 59)
-        Me.btPembelian.TabIndex = 4
-        Me.btPembelian.Text = "PEMBELIAN"
-        Me.btPembelian.UseVisualStyleBackColor = True
-        Me.btPembelian.Visible = False
+        Me.BTstock.Location = New System.Drawing.Point(802, 452)
+        Me.BTstock.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTstock.Name = "BTstock"
+        Me.BTstock.Size = New System.Drawing.Size(94, 59)
+        Me.BTstock.TabIndex = 4
+        Me.BTstock.Text = "STOCK"
+        Me.BTstock.UseVisualStyleBackColor = True
+        Me.BTstock.Visible = False
+        '
+        'BTcustomer
+        '
+        Me.BTcustomer.Location = New System.Drawing.Point(942, 452)
+        Me.BTcustomer.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTcustomer.Name = "BTcustomer"
+        Me.BTcustomer.Size = New System.Drawing.Size(94, 59)
+        Me.BTcustomer.TabIndex = 5
+        Me.BTcustomer.Text = "CUSTOMER"
+        Me.BTcustomer.UseVisualStyleBackColor = True
+        Me.BTcustomer.Visible = False
         '
         'formAdmin
         '
@@ -88,7 +100,8 @@ Partial Class formAdmin
         Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.BG_Form_Admin
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
-        Me.Controls.Add(Me.btPembelian)
+        Me.Controls.Add(Me.BTcustomer)
+        Me.Controls.Add(Me.BTstock)
         Me.Controls.Add(Me.btPenjualan)
         Me.Controls.Add(Me.btLogout)
         Me.Controls.Add(Me.btLaporanpengeluaran)
@@ -105,5 +118,6 @@ Partial Class formAdmin
     Friend WithEvents btLaporanpengeluaran As Button
     Friend WithEvents btLogout As Button
     Friend WithEvents btPenjualan As Button
-    Friend WithEvents btPembelian As Button
+    Friend WithEvents BTstock As Button
+    Friend WithEvents BTcustomer As Button
 End Class

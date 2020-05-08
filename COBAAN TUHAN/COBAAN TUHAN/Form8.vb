@@ -181,4 +181,12 @@ Public Class FormPay
 
         End Try
     End Sub
+
+    Private Sub MenuPay_Click(sender As Object, e As EventArgs) Handles MenuPay.Click
+
+    End Sub
+
+    Private Sub MenuLogout_Click(sender As Object, e As EventArgs) Handles MenuLogout.Click
+
+    End Sub
 End Class

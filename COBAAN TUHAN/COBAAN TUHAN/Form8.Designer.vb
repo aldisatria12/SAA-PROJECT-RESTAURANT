@@ -40,12 +40,11 @@ Partial Class FormPay
         Me.MenuUtama.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuUtama.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.MenuKas, Me.MenuPay, Me.MenuLogout})
         Me.MenuUtama.Location = New System.Drawing.Point(0, 0)
-        Me.MenuUtama.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MenuUtama.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuUtama.Name = "MenuUtama"
         Me.MenuUtama.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay
-        Me.MenuUtama.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized
         Me.MenuUtama.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden
-        Me.MenuUtama.Size = New System.Drawing.Size(48, 720)
+        Me.MenuUtama.Size = New System.Drawing.Size(250, 720)
         Me.MenuUtama.TabIndex = 4
         Me.MenuUtama.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -82,7 +81,7 @@ Partial Class FormPay
         'numArea
         '
         Me.numArea.Location = New System.Drawing.Point(733, 30)
-        Me.numArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.numArea.Margin = New System.Windows.Forms.Padding(2)
         Me.numArea.Name = "numArea"
         Me.numArea.Size = New System.Drawing.Size(103, 20)
         Me.numArea.TabIndex = 5

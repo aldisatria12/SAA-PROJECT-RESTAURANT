@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports DevExpress.CodeParser
+Imports MySql.Data.MySqlClient
 Public Class FormCheck
     Dim sqlconnect As New MySqlConnection("server = localhost; uid = root; password =; database = restaurant")
     Dim sqlcommand As New MySqlCommand
@@ -67,6 +68,7 @@ Public Class FormCheck
             sqlconnect.Close()
             MsgBox(ex.Message)
         End Try
+
     End Sub
 
     Private Sub PbBack_Click(sender As Object, e As EventArgs) Handles PbBack.Click

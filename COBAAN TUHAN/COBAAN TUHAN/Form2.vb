@@ -4,7 +4,8 @@
     End Sub
 
     Private Sub btLaporanpengeluaran_Click(sender As Object, e As EventArgs) Handles btLaporanpengeluaran.Click
-        btPembelian.Visible = True
+        BTstock.Visible = True
+        BTcustomer.Visible = True
         btPenjualan.Visible = True
 
     End Sub
@@ -22,12 +23,14 @@
     End Sub
 
     Private Sub btPenjualan_Click(sender As Object, e As EventArgs) Handles btPenjualan.Click
-        Formpenjualan.Show()
-        Me.Close()
+        Form_Report_Penjualan.Show()
     End Sub
 
-    Private Sub btPembelian_Click(sender As Object, e As EventArgs) Handles btPembelian.Click
-        Formpembelian.Show()
-        Me.Close()
+    Private Sub BTstock_Click(sender As Object, e As EventArgs) Handles BTstock.Click
+        Form_report_stock.ShowDialog()
+    End Sub
+
+    Private Sub BTcustomer_Click(sender As Object, e As EventArgs) Handles BTcustomer.Click
+        Form_Report_Customer.ShowDialog()
     End Sub
 End Class
