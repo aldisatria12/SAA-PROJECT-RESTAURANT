@@ -819,3 +819,4 @@ C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUH
 C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.XtraReport2.resources
 C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.XtraReport3.resources
 C:\Users\Mahotma\Documents\GitHub\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN TUHAN.exe.licenses
+C:\Users\Lenovo\Desktop\Design AD\SAA-PROJECT-RESTAURANT\COBAAN TUHAN\COBAAN TUHAN\obj\Debug\COBAAN_TUHAN.Formbayar.resources

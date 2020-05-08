@@ -112,4 +112,8 @@ Public Class FormMenu
         End Try
         Me.Hide()
     End Sub
+
+    Private Sub DgvMenu_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvMenu.CellContentClick
+
+    End Sub
 End Class

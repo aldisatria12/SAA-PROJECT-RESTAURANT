@@ -89,7 +89,7 @@ Public Class FormPay
                 End Try
             End If
         ElseIf LbUser.Text = "Cashier" Then
-            If sender.color = Color.Red Then
+            If sender.backcolor = Color.Red Then
 
                 Try
                     FormCustomer.Q = sender.tag.ToString
