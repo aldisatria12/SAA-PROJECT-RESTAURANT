@@ -9,6 +9,8 @@ Public Class FormPay
     Dim pb(4, 1) As PictureBox
     Dim lb(4, 1) As Label
     Dim dt_table As New DataTable
+    Public tekan As String
+
     Sub FormPay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MenuPay.Enabled = False
         Me.Left = 0
@@ -91,7 +93,17 @@ Public Class FormPay
                 sqlconnect.Close()
                 MsgBox(ex.Message)
             End Try
-
+            tekan = sender.tag.ToString
+        ElseIf LbUser.Text = "Cashier" Then
+            Try
+                FormCustomer.Q = sender.tag.ToString
+                FormCustomer.dtCustomer = New DataTable
+                Form_pembelian.ShowDialog()
+            Catch ex As Exception
+                sqlconnect.Close()
+            MsgBox(ex.Message)
+            End Try
+            tekan = sender.tag.ToString
 
         End If
         refrespb()

@@ -8,6 +8,7 @@ Public Class FormCustomer
     Public G As String 'Customer id
     Dim H As Integer 'Counter
     Public Q As String 'Table ID
+
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         G = ""
     End Sub
@@ -66,5 +67,8 @@ Public Class FormCustomer
         TbCust.Text = ""
 
         Me.Hide()
+    End Sub
+    Public Sub CR(sender As Object, e As EventArgs)
+
     End Sub
 End Class

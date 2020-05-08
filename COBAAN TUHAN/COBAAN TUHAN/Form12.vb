@@ -45,7 +45,7 @@ Public Class FormCheck
     Private Sub BtnSubmit_Click(sender As Object, e As EventArgs) Handles BtnSubmit.Click
         Try
             sqlconnect.Open()
-            query = "insert into selling values ('" + D + "', '" + FormCustomer.G + "', 0, 0, 0);"
+            query = "insert into selling values ('" + D + "', '" + FormCustomer.G + "','" + FormCustomer.Q + "', 0, 0, 0);"
             sqlcommand = New MySqlCommand(query, sqlconnect)
             sqlcommand.ExecuteNonQuery()
             For i = 0 To DgvCheck.Rows.Count - 2
