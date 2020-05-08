@@ -6,7 +6,7 @@ Public Class FormPay
     Dim sqlcommand As New MySqlCommand
     Dim sqladapter As New MySqlDataAdapter
     Dim sqlquery As String
-    Dim pb(4, 1) As PictureBox
+    Public pb(4, 1) As PictureBox
     Dim lb(4, 1) As Label
     Dim dt_table As New DataTable
     Public tekan As String
@@ -111,7 +111,7 @@ Public Class FormPay
     End Sub
 
 
-    Sub refrespb()
+    Public Sub refrespb()
         If dt_table.Rows.Count <> 0 Then
             For i = 0 To 4
                 lb(i, 0).Visible = False
