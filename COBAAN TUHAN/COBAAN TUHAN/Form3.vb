@@ -55,7 +55,6 @@ Public Class formInsert
 
     Sub refreshDGV()
         Try
-
             dt_View = New DataTable
             If mode = "menu" Then
                 sqlQuery = "SELECT menu_id `ID`, menu_name `Name`, category_name `Category`, sell_price `Price`, IF(menu_status = 1,'Active','Non-Active') `Status` FROM category c, menu m WHERE c.category_id = m.category_id AND menu_delete = 0"
@@ -80,11 +79,28 @@ Public Class formInsert
             sqlCommand = New MySqlCommand(sqlQuery, sqlConnect)
             sqlAdapter = New MySqlDataAdapter(sqlCommand)
             sqlAdapter.Fill(dt_View)
-            dgAdmin.DataSource = dt_View
-            dgAdmin.Columns.Add(btEdt)
-            dgAdmin.Columns.Add(btDel)
+            With dgAdmin
+                .DataSource = dt_View
+                .Columns("ID").DisplayIndex = 0
+                .Columns("Name").DisplayIndex = 1
+                If mode = "menu" Then
+                    .Columns("Category").DisplayIndex = 2
+                    .Columns("Price").DisplayIndex = 3
+                    .Columns("Status").DisplayIndex = 4
+                ElseIf mode = "ingredients" Then
+                    .Columns("Stock").DisplayIndex = 2
+                    .Columns("Status").DisplayIndex = 3
+                ElseIf mode = "table" Then
+                    .Columns("Seats Available").DisplayIndex = 2
+                    .Columns("Status").DisplayIndex = 3
+                ElseIf mode = "category" Then
+                    .Columns("Status").DisplayIndex = 2
+                End If
+                .Columns.Add(btEdt)
+                .Columns.Add(btDel)
+            End With
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
     End Sub
 
@@ -123,4 +139,7 @@ Public Class formInsert
         Me.Close()
     End Sub
 
+    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
+        refreshDGV()
+    End Sub
 End Class

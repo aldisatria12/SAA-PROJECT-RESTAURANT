@@ -3,7 +3,7 @@ Public Class Form_pembelian
     Dim sqlconnect As New MySqlConnection("server = localhost; uid = root; password =; database = restaurant")
     Dim sqlcommand As New MySqlCommand
     Dim sqladapter As New MySqlDataAdapter
-    Dim query As String
+    Dim sqlQuery As String
     Dim dt_menu As New DataTable
 
     Private Sub MenuKas_Click(sender As Object, e As EventArgs) Handles MenuKas.Click
@@ -35,7 +35,11 @@ Public Class Form_pembelian
 
     Private Sub Form_pembelian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            MsgBox(FormPay.tekan)
+            dt_menu = New DataTable
+            sqlQuery = "select menu_name, amount, sell_price `harga Satuan` from dselling d, selling s, menu m, customer c, `table` t where s.invoice_id=d.invoice_id and m.menu_id=d.menu_id and s.table_id=t.table_id and s.customer_id=c.customer_id and s.table_id='" + FormPay.tekan + "';"
+            sqlcommand = New MySqlCommand(sqlQuery, sqlconnect)
+            sqladapter = New MySqlDataAdapter(sqlcommand)
+            sqladapter.Fill(dt_menu)
         Catch ex As Exception
 
         End Try

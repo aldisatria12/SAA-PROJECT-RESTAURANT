@@ -36,59 +36,66 @@ Partial Class formInsert
         '
         'ctMenu
         '
-        Me.ctMenu.Location = New System.Drawing.Point(14, 12)
+        Me.ctMenu.Location = New System.Drawing.Point(9, 8)
+        Me.ctMenu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ctMenu.Name = "ctMenu"
-        Me.ctMenu.Size = New System.Drawing.Size(88, 76)
+        Me.ctMenu.Size = New System.Drawing.Size(59, 49)
         Me.ctMenu.TabIndex = 0
         Me.ctMenu.Text = "MENU"
         '
         'ctKategorimenu
         '
-        Me.ctKategorimenu.Location = New System.Drawing.Point(298, 12)
+        Me.ctKategorimenu.Location = New System.Drawing.Point(199, 8)
+        Me.ctKategorimenu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ctKategorimenu.Name = "ctKategorimenu"
-        Me.ctKategorimenu.Size = New System.Drawing.Size(88, 76)
+        Me.ctKategorimenu.Size = New System.Drawing.Size(59, 49)
         Me.ctKategorimenu.TabIndex = 1
         Me.ctKategorimenu.Text = "KATEGORI " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "MENU"
         '
         'ctKursimeja
         '
-        Me.ctKursimeja.Location = New System.Drawing.Point(202, 12)
+        Me.ctKursimeja.Location = New System.Drawing.Point(135, 8)
+        Me.ctKursimeja.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ctKursimeja.Name = "ctKursimeja"
-        Me.ctKursimeja.Size = New System.Drawing.Size(88, 76)
+        Me.ctKursimeja.Size = New System.Drawing.Size(59, 49)
         Me.ctKursimeja.TabIndex = 2
         Me.ctKursimeja.Text = "KURSI" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "MEJA"
         '
         'ctStokbahan
         '
-        Me.ctStokbahan.Location = New System.Drawing.Point(108, 12)
+        Me.ctStokbahan.Location = New System.Drawing.Point(72, 8)
+        Me.ctStokbahan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ctStokbahan.Name = "ctStokbahan"
-        Me.ctStokbahan.Size = New System.Drawing.Size(88, 76)
+        Me.ctStokbahan.Size = New System.Drawing.Size(59, 49)
         Me.ctStokbahan.TabIndex = 3
         Me.ctStokbahan.Text = "STOK" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "BAHAN"
         '
         'tbSearch
         '
         Me.tbSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbSearch.Location = New System.Drawing.Point(14, 108)
+        Me.tbSearch.Location = New System.Drawing.Point(9, 70)
+        Me.tbSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbSearch.Name = "tbSearch"
-        Me.tbSearch.Size = New System.Drawing.Size(1040, 39)
+        Me.tbSearch.Size = New System.Drawing.Size(695, 29)
         Me.tbSearch.TabIndex = 4
         '
         'dgAdmin
         '
         Me.dgAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgAdmin.Location = New System.Drawing.Point(14, 251)
+        Me.dgAdmin.Location = New System.Drawing.Point(9, 163)
+        Me.dgAdmin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgAdmin.Name = "dgAdmin"
         Me.dgAdmin.RowHeadersWidth = 62
         Me.dgAdmin.RowTemplate.Height = 28
-        Me.dgAdmin.Size = New System.Drawing.Size(1198, 840)
+        Me.dgAdmin.Size = New System.Drawing.Size(799, 546)
         Me.dgAdmin.TabIndex = 5
         '
         'btAdd
         '
-        Me.btAdd.Location = New System.Drawing.Point(939, 158)
+        Me.btAdd.Location = New System.Drawing.Point(626, 103)
+        Me.btAdd.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btAdd.Name = "btAdd"
-        Me.btAdd.Size = New System.Drawing.Size(117, 62)
+        Me.btAdd.Size = New System.Drawing.Size(78, 40)
         Me.btAdd.TabIndex = 6
         Me.btAdd.Text = "ADD"
         Me.btAdd.UseVisualStyleBackColor = True
@@ -101,30 +108,30 @@ Partial Class formInsert
         Me.cbAktif.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbAktif.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbAktif.ForeColor = System.Drawing.Color.White
-        Me.cbAktif.Location = New System.Drawing.Point(14, 171)
+        Me.cbAktif.Location = New System.Drawing.Point(9, 111)
+        Me.cbAktif.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbAktif.Name = "cbAktif"
-        Me.cbAktif.Size = New System.Drawing.Size(117, 35)
+        Me.cbAktif.Size = New System.Drawing.Size(80, 24)
         Me.cbAktif.TabIndex = 7
         Me.cbAktif.Text = "ACTIVE"
         Me.cbAktif.UseVisualStyleBackColor = False
         '
         'btHome
         '
-        Me.btHome.Location = New System.Drawing.Point(1719, 18)
-        Me.btHome.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btHome.Location = New System.Drawing.Point(1146, 12)
         Me.btHome.Name = "btHome"
-        Me.btHome.Size = New System.Drawing.Size(183, 165)
+        Me.btHome.Size = New System.Drawing.Size(122, 107)
         Me.btHome.TabIndex = 8
         Me.btHome.Text = "HOME"
         Me.btHome.UseVisualStyleBackColor = True
         '
         'formInsert
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.khot_dog_sosiski_bulki_ketchup_sous_sousy_tomaty_zelen_stol
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1920, 1106)
+        Me.ClientSize = New System.Drawing.Size(1280, 715)
         Me.Controls.Add(Me.btHome)
         Me.Controls.Add(Me.cbAktif)
         Me.Controls.Add(Me.btAdd)
@@ -135,6 +142,7 @@ Partial Class formInsert
         Me.Controls.Add(Me.ctKategorimenu)
         Me.Controls.Add(Me.ctMenu)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "formInsert"
         Me.Text = "Form3"
         CType(Me.dgAdmin, System.ComponentModel.ISupportInitialize).EndInit()

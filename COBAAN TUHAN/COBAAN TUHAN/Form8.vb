@@ -88,22 +88,22 @@ Public Class FormPay
                 sqladapter.Fill(FormCustomer.dtCustomer)
                 FormCustomer.LbTable.Text = sender.tag.ToString.Substring(2, 2)
                 FormCustomer.TbCust.Text = ""
-                FormCustomer.ShowDialog()
+                tekan = sender.tag.ToString
+                FormCustomer.Show()
             Catch ex As Exception
                 sqlconnect.Close()
                 MsgBox(ex.Message)
             End Try
-            tekan = sender.tag.ToString
         ElseIf LbUser.Text = "Cashier" Then
             Try
                 FormCustomer.Q = sender.tag.ToString
                 FormCustomer.dtCustomer = New DataTable
-                Form_pembelian.ShowDialog()
+                tekan = sender.tag.ToString
+                Form_pembelian.Show()
             Catch ex As Exception
                 sqlconnect.Close()
-            MsgBox(ex.Message)
+                MsgBox(ex.Message)
             End Try
-            tekan = sender.tag.ToString
 
         End If
         refrespb()
