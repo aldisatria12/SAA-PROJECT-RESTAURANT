@@ -15,12 +15,14 @@ Public Class FormCustomer
 
     Private Sub BtnOrder_Click(sender As Object, e As EventArgs) Handles BtnOrder.Click
         If TbCust.Text <> "" Then
+
             Try
                 sqlconnect.Open()
-                query = "Update `table` SET table_status = 0 WHERE table_id = '" + Q + "';"
+                query = "Update `table` SET table_status = 0 WHERE table_id = '" + FormPay.tekan + "';"
                 sqlcommand = New MySqlCommand(query, sqlconnect)
                 sqlcommand.ExecuteNonQuery()
                 sqlconnect.Close()
+                FormPay.refrespb()
             Catch ex As Exception
                 sqlconnect.Close()
                 MsgBox(ex.Message)
@@ -61,7 +63,6 @@ Public Class FormCustomer
         Else
             MsgBox("Nama belum diisi")
         End If
-        FormPay.refrespb()
     End Sub
 
     Private Sub PbExit_Click(sender As Object, e As EventArgs) Handles PbExit.Click

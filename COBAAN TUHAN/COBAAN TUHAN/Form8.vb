@@ -79,32 +79,37 @@ Public Class FormPay
 
     Sub clickpb(sender As Object, e As EventArgs)
         If LbUser.Text = "Waiter" Then
-            Try
-                FormCustomer.Q = sender.tag.ToString
-                FormCustomer.dtCustomer = New DataTable
-                sqlquery = "select customer_id, customer_name from customer"
-                sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
-                sqladapter = New MySqlDataAdapter(sqlcommand)
-                sqladapter.Fill(FormCustomer.dtCustomer)
-                FormCustomer.LbTable.Text = sender.tag.ToString.Substring(2, 2)
-                FormCustomer.TbCust.Text = ""
-                tekan = sender.tag.ToString
-                FormCustomer.Show()
-            Catch ex As Exception
-                sqlconnect.Close()
-                MsgBox(ex.Message)
-            End Try
+            If sender.backcolor = Color.Green Then
+                Try
+                    FormCustomer.Q = sender.tag.ToString
+                    FormCustomer.dtCustomer = New DataTable
+                    sqlquery = "select customer_id, customer_name from customer"
+                    sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
+                    sqladapter = New MySqlDataAdapter(sqlcommand)
+                    sqladapter.Fill(FormCustomer.dtCustomer)
+                    FormCustomer.LbTable.Text = sender.tag.ToString.Substring(2, 2)
+                    FormCustomer.TbCust.Text = ""
+                    tekan = sender.tag.ToString
+                    FormCustomer.Show()
+                Catch ex As Exception
+                    sqlconnect.Close()
+                    MsgBox(ex.Message)
+                End Try
+            End If
         ElseIf LbUser.Text = "Cashier" Then
-            Try
-                FormCustomer.Q = sender.tag.ToString
-                FormCustomer.dtCustomer = New DataTable
-                tekan = sender.tag.ToString
-                Form_pembelian.Show()
-            Catch ex As Exception
-                sqlconnect.Close()
-                MsgBox(ex.Message)
-            End Try
+            If sender.color = Color.Red Then
 
+                Try
+                    FormCustomer.Q = sender.tag.ToString
+                    FormCustomer.dtCustomer = New DataTable
+                    tekan = sender.tag.ToString
+                    Form_pembelian.Show()
+                Catch ex As Exception
+                    sqlconnect.Close()
+                    MsgBox(ex.Message)
+                End Try
+
+            End If
         End If
         refrespb()
         refreshlb()
