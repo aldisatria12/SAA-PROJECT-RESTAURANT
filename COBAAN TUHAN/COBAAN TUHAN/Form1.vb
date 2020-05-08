@@ -1,8 +1,5 @@
 ﻿Public Class formLogin
     Private Sub btLogin_Click(sender As Object, e As EventArgs) Handles btLogin.Click
-        If tbUsername.Text = "" Then
-            FormMenu.ShowDialog()
-        End If
         If tbUsername.Text = "Aku" Then
             FormPay.LbUser.Text = "Cashier"
             FormPay.MenuUtama.Visible = True

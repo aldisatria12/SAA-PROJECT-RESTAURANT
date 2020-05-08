@@ -92,6 +92,7 @@ Public Class FormPay
                 MsgBox(ex.Message)
             End Try
 
+
         End If
         refrespb()
         refreshlb()

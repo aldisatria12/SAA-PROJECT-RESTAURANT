@@ -64,6 +64,7 @@ Public Class FormCustomer
 
     Private Sub PbExit_Click(sender As Object, e As EventArgs) Handles PbExit.Click
         TbCust.Text = ""
+
         Me.Hide()
     End Sub
 End Class

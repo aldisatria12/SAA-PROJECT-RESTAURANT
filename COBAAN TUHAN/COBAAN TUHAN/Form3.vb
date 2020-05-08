@@ -55,6 +55,7 @@ Public Class formInsert
 
     Sub refreshDGV()
         Try
+
             dt_View = New DataTable
             If mode = "menu" Then
                 sqlQuery = "SELECT menu_id `ID`, menu_name `Name`, category_name `Category`, sell_price `Price`, IF(menu_status = 1,'Active','Non-Active') `Status` FROM category c, menu m WHERE c.category_id = m.category_id AND menu_delete = 0"
@@ -83,6 +84,7 @@ Public Class formInsert
             dgAdmin.Columns.Add(btEdt)
             dgAdmin.Columns.Add(btDel)
         Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
     End Sub
 
