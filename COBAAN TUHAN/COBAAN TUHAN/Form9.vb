@@ -15,7 +15,6 @@ Public Class FormCustomer
 
     Private Sub BtnOrder_Click(sender As Object, e As EventArgs) Handles BtnOrder.Click
         If TbCust.Text <> "" Then
-
             Try
                 sqlconnect.Open()
                 query = "Update `table` SET table_status = 0 WHERE table_id = '" + FormPay.tekan + "';"
@@ -23,6 +22,7 @@ Public Class FormCustomer
                 sqlcommand.ExecuteNonQuery()
                 sqlconnect.Close()
                 FormPay.refrespb()
+                FormPay.refreshlb()
             Catch ex As Exception
                 sqlconnect.Close()
                 MsgBox(ex.Message)

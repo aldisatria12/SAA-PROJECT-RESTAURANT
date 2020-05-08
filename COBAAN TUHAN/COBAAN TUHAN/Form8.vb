@@ -15,15 +15,7 @@ Public Class FormPay
         MenuPay.Enabled = False
         Me.Left = 0
         Me.Top = 0
-        Try
-            dt_table = New DataTable
-            sqlquery = "select * from `table`"
-            sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
-            sqladapter = New MySqlDataAdapter(sqlcommand)
-            sqladapter.Fill(dt_table)
-        Catch ex As Exception
-
-        End Try
+        refreshDT()
         If dt_table.Rows.Count Mod 10 = 0 Then
             numArea.Minimum = 1
             numArea.Maximum = (dt_table.Rows.Count \ 10)
@@ -124,6 +116,7 @@ Public Class FormPay
                 pb(i, 0).Visible = False
                 pb(i, 1).Visible = False
             Next
+            refreshDT()
         End If
         Try
             For i = 0 To 9
@@ -176,6 +169,17 @@ Public Class FormPay
 
     End Sub
 
+    Sub refreshDT()
+        Try
+            dt_table = New DataTable
+            sqlquery = "select * from `table`"
+            sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
+            sqladapter = New MySqlDataAdapter(sqlcommand)
+            sqladapter.Fill(dt_table)
+        Catch ex As Exception
+
+        End Try
+    End Sub
 
     Private Sub MenuKas_Click(sender As Object, e As EventArgs) Handles MenuKas.Click
         'Me.Hide()
