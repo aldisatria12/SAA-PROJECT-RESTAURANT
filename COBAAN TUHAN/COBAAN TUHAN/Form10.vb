@@ -106,6 +106,8 @@ Public Class FormMenu
                 query = "Update `table` SET table_status = 1 WHERE table_id = '" + FormCustomer.Q + "';"
                 sqlcommand = New MySqlCommand(query, sqlconnect)
                 sqlcommand.ExecuteNonQuery()
+                FormPay.refrespb()
+                FormPay.refreshlb()
                 sqlconnect.Close()
             Catch ex As Exception
                 sqlconnect.Close()
