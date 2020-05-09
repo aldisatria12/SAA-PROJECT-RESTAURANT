@@ -1,7 +1,7 @@
 ﻿Public Class Formbayar
     Dim simpan As Integer
     Private Sub BTsubmit_Click(sender As Object, e As EventArgs) Handles BTsubmit.Click
-        If Form_pembelian.LLangkabayar.Text > NUDangka.Value Then
+        If CInt(Form_pembelian.LLangkatotal.Text) > NUDangka.Value Then
             MsgBox("Uang masih kurang oi!!!")
         Else
             Form_pembelian.penyimpan = NUDangka.Value - Form_pembelian.penyimpan

@@ -12,20 +12,19 @@ Public Class Form_pembelian
 
 
     Private Sub MenuKas_Click(sender As Object, e As EventArgs) Handles MenuKas.Click
-        'Me.Hide()
+        Me.Close()
         FormKas.MdiParent = formParent
         FormKas.Show()
     End Sub
 
     Private Sub MenuPay_Click(sender As Object, e As EventArgs) Handles MenuPay.Click
-        'Me.Hide()
+        Me.Close()
         FormPay.MdiParent = formParent
         FormPay.Show()
     End Sub
 
     Private Sub BTback_Click(sender As Object, e As EventArgs) Handles BTback.Click
-        FormPay.MdiParent = formParent
-        FormPay.Show()
+        Me.Close()
     End Sub
 
     Private Sub BTbayar_Click(sender As Object, e As EventArgs) Handles BTbayar.Click
@@ -36,8 +35,6 @@ Public Class Form_pembelian
     End Sub
 
     Private Sub BTselesai_Click(sender As Object, e As EventArgs) Handles BTselesai.Click
-        FormPay.MdiParent = formParent
-        FormPay.Show()
         Try
             sqlconnect.Open()
             sqlQuery = "Update `table` SET table_status = 1 WHERE table_id = '" + FormPay.tekan + "';"
@@ -53,7 +50,10 @@ Public Class Form_pembelian
 
         Try
             sqlconnect.Open()
-            sqlQuery = "Update selling SET total_sell_price = '" + LLangkabayar.Text + "', selling_status = 1 WHERE invoice_id = '" + FormPay.tekan + "';"
+            sqlQuery = "Update selling SET total_sell_price = " + LLangkatotal.Text + " WHERE invoice_id = '" + dt_menu.Rows(0).Item(0).ToString + "';"
+            sqlcommand = New MySqlCommand(sqlQuery, sqlconnect)
+            sqlcommand.ExecuteNonQuery()
+            sqlQuery = "Update selling SET selling_status = 1 WHERE invoice_id = '" + dt_menu.Rows(0).Item(0).ToString + "';"
             sqlcommand = New MySqlCommand(sqlQuery, sqlconnect)
             sqlcommand.ExecuteNonQuery()
             sqlconnect.Close()
@@ -61,6 +61,8 @@ Public Class Form_pembelian
             sqlconnect.Close()
             MsgBox(ex.Message)
         End Try
+        FormKas.Pendapatan += CInt(LLangkatotal.Text)
+        Me.Close()
     End Sub
 
     Private Sub Form_pembelian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -85,7 +87,7 @@ and s.table_id= '" + FormPay.tekan + "' and s.selling_status = 0 ;"
             LLangkasubtotal.Text = penyimpan.ToString
             penyimpan2 = penyimpan * 0.1
             LLangkatax.Text = penyimpan2
-            penyimpan = penyimpan - penyimpan2
+            penyimpan = penyimpan + penyimpan2
             LLangkatotal.Text = penyimpan
         Catch ex As Exception
             MsgBox(ex.Message)

@@ -1,6 +1,8 @@
 ﻿Public Class FormKas
     Dim C As String 'Angka full
     Dim B As Integer = 0 'Integer dr C
+    Public Buka As Integer = 0 'True false buka kasir
+    Public Pendapatan As Integer = 0
 
     Private Sub FormKas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Top = 0
@@ -12,7 +14,7 @@
         TbPendapatan.Enabled = False
         TbPengeluaran.Enabled = False
         TbSelisih.Enabled = False
-        TbAkhir.Enabled = False
+        MtbAkhir.Enabled = False
         TbFisik.Enabled = False
         TbSelisih.Enabled = False
         DtpMulai.Value = Now
@@ -23,20 +25,22 @@
     End Sub
 
     Private Sub TmSelesai_Tick(sender As Object, e As EventArgs) Handles TmSelesai.Tick
+        TbPendapatan.Text = Pendapatan.ToString
         DtpSelesai.Value = Now
     End Sub
 
     Private Sub BtnBuka_Click(sender As Object, e As EventArgs) Handles BtnBuka.Click
         If TbAwal.Text <> "" Then
+            Buka = 1
+            Pendapatan = CInt(TbAwal.Text)
             BtnTutup.Enabled = True
             BtnBuka.Enabled = False
             TbAwal.Enabled = False
             TmMulai.Enabled = False
-            TbPendapatan.Enabled = True
-            TbPengeluaran.Enabled = True
-            TbSelisih.Enabled = True
-            TbAkhir.Enabled = True
-            TbSelisih.Enabled = True
+            TbPendapatan.Enabled = False
+            TbPengeluaran.Enabled = False
+            TbSelisih.Enabled = False
+            MtbAkhir.Enabled = False
             TbFisik.Enabled = True
         Else
             MsgBox("Data belum diisi")
@@ -44,21 +48,23 @@
     End Sub
 
     Private Sub BtnTutup_Click(sender As Object, e As EventArgs) Handles BtnTutup.Click
-        If TbAkhir.Text <> "" And TbFisik.Text <> "" And TbPendapatan.Text <> "" And TbPengeluaran.Text <> "" And TbSelisih.Text <> "" Then
+        If MtbAkhir.Text <> "" And TbFisik.Text <> "" And TbPendapatan.Text <> "" And TbPengeluaran.Text <> "" And TbSelisih.Text <> "" Then
             MsgBox("Tutup Kasir Berhasil")
+            Buka = 0
+            Pendapatan = 0
             BtnTutup.Enabled = False
             BtnBuka.Enabled = True
             TmMulai.Enabled = True
             TbPendapatan.Enabled = False
             TbPengeluaran.Enabled = False
             TbSelisih.Enabled = False
-            TbAkhir.Enabled = False
+            MtbAkhir.Enabled = False
             TbFisik.Enabled = False
             TbAwal.Enabled = True
             TbPendapatan.Text = ""
             TbPengeluaran.Text = ""
             TbSelisih.Text = ""
-            TbAkhir.Text = ""
+            MtbAkhir.Text = ""
             TbFisik.Text = ""
             TbAwal.Text = ""
         Else
@@ -97,11 +103,26 @@
 
     Private Sub TbFisik_TextChanged(sender As Object, e As EventArgs) Handles TbFisik.TextChanged
         Call Textbox(sender, e)
+        If Buka = 1 Then
+            TbSelisih.Text = CInt(TbFisik.Text) - CInt(MtbAkhir.Text)
+        End If
     End Sub
 
     Private Sub MenuPay_Click(sender As Object, e As EventArgs) Handles MenuPay.Click
-        'Me.Hide()
-        FormPay.MdiParent = formParent
-        FormPay.Show()
+        If Buka = 1 Then
+            Me.Hide()
+            FormPay.MdiParent = formParent
+            FormPay.Show()
+        ElseIf Buka = 0 Then
+            MsgBox("Kas Belum Dibuka")
+        End If
+    End Sub
+
+    Private Sub MenuLogout_Click(sender As Object, e As EventArgs) Handles MenuLogout.Click
+        Me.Close()
+    End Sub
+
+    Private Sub TbPendapatan_TextChanged(sender As Object, e As EventArgs) Handles TbPendapatan.TextChanged
+        MtbAkhir.Text = TbPendapatan.Text
     End Sub
 End Class

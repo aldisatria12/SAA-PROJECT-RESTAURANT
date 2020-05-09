@@ -58,8 +58,8 @@ Public Class FormCustomer
             FormMenu.LbTable.Text = LbTable.Text
             FormMenu.LbCust.Text = TbCust.Text
             FormMenu.MdiParent = formParent
-            FormMenu.Show()
             Me.Hide()
+            FormMenu.Show()
         Else
             MsgBox("Nama belum diisi")
         End If
@@ -67,8 +67,7 @@ Public Class FormCustomer
 
     Private Sub PbExit_Click(sender As Object, e As EventArgs) Handles PbExit.Click
         TbCust.Text = ""
-
-        Me.Hide()
+        Me.Close()
     End Sub
     Public Sub CR(sender As Object, e As EventArgs)
 

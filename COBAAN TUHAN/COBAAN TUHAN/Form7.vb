@@ -1,6 +1,6 @@
 ﻿Public Class FormUtamaKasir
     Private Sub MenuKas_Click(sender As Object, e As EventArgs) Handles MenuKas.Click
-        'Me.Hide()
+        Me.Close()
         FormKas.MdiParent = formParent
         FormKas.Show()
     End Sub
@@ -11,9 +11,13 @@
     End Sub
 
     Private Sub MenuPay_Click(sender As Object, e As EventArgs) Handles MenuPay.Click
-        'Me.Hide()
-        FormPay.MdiParent = formParent
-        FormPay.Show()
+        If FormKas.Buka = 1 Then
+            Me.Close()
+            FormPay.MdiParent = formParent
+            FormPay.Show()
+        ElseIf FormKas.Buka = 0 Then
+            MsgBox("Kas Belum Dibuka")
+        End If
     End Sub
 
 

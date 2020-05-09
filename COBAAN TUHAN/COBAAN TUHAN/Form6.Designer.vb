@@ -30,8 +30,6 @@ Partial Class FormKas
         Me.BtnTutup = New System.Windows.Forms.Button()
         Me.BtnBuka = New System.Windows.Forms.Button()
         Me.TbSelisih = New System.Windows.Forms.TextBox()
-        Me.TbFisik = New System.Windows.Forms.TextBox()
-        Me.TbAkhir = New System.Windows.Forms.TextBox()
         Me.TbPengeluaran = New System.Windows.Forms.TextBox()
         Me.TbPendapatan = New System.Windows.Forms.TextBox()
         Me.TbAwal = New System.Windows.Forms.TextBox()
@@ -47,6 +45,8 @@ Partial Class FormKas
         Me.TmSelesai = New System.Windows.Forms.Timer(Me.components)
         Me.DtpSelesai = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.TbFisik = New System.Windows.Forms.TextBox()
+        Me.MtbAkhir = New System.Windows.Forms.MaskedTextBox()
         CType(Me.MenuUtamaKas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -122,26 +122,14 @@ Partial Class FormKas
         Me.TbSelisih.Size = New System.Drawing.Size(130, 20)
         Me.TbSelisih.TabIndex = 65
         '
-        'TbFisik
-        '
-        Me.TbFisik.Location = New System.Drawing.Point(251, 217)
-        Me.TbFisik.Name = "TbFisik"
-        Me.TbFisik.Size = New System.Drawing.Size(130, 20)
-        Me.TbFisik.TabIndex = 64
-        '
-        'TbAkhir
-        '
-        Me.TbAkhir.Location = New System.Drawing.Point(251, 184)
-        Me.TbAkhir.Name = "TbAkhir"
-        Me.TbAkhir.Size = New System.Drawing.Size(130, 20)
-        Me.TbAkhir.TabIndex = 63
-        '
         'TbPengeluaran
         '
         Me.TbPengeluaran.Location = New System.Drawing.Point(251, 153)
         Me.TbPengeluaran.Name = "TbPengeluaran"
         Me.TbPengeluaran.Size = New System.Drawing.Size(130, 20)
         Me.TbPengeluaran.TabIndex = 62
+        Me.TbPengeluaran.Text = "0"
+        Me.TbPengeluaran.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TbPendapatan
         '
@@ -149,6 +137,7 @@ Partial Class FormKas
         Me.TbPendapatan.Name = "TbPendapatan"
         Me.TbPendapatan.Size = New System.Drawing.Size(130, 20)
         Me.TbPendapatan.TabIndex = 61
+        Me.TbPendapatan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TbAwal
         '
@@ -257,6 +246,21 @@ Partial Class FormKas
         Me.Label8.TabIndex = 68
         Me.Label8.Text = "Selesai"
         '
+        'TbFisik
+        '
+        Me.TbFisik.Location = New System.Drawing.Point(251, 217)
+        Me.TbFisik.Name = "TbFisik"
+        Me.TbFisik.Size = New System.Drawing.Size(130, 20)
+        Me.TbFisik.TabIndex = 64
+        '
+        'MtbAkhir
+        '
+        Me.MtbAkhir.Location = New System.Drawing.Point(251, 187)
+        Me.MtbAkhir.Name = "MtbAkhir"
+        Me.MtbAkhir.Size = New System.Drawing.Size(130, 20)
+        Me.MtbAkhir.TabIndex = 70
+        Me.MtbAkhir.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'FormKas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -264,13 +268,13 @@ Partial Class FormKas
         Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.wallpaper_wiki_Download_Images_Food_HD_PIC_WPD006571
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.MtbAkhir)
         Me.Controls.Add(Me.DtpSelesai)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.BtnTutup)
         Me.Controls.Add(Me.BtnBuka)
         Me.Controls.Add(Me.TbSelisih)
         Me.Controls.Add(Me.TbFisik)
-        Me.Controls.Add(Me.TbAkhir)
         Me.Controls.Add(Me.TbPengeluaran)
         Me.Controls.Add(Me.TbPendapatan)
         Me.Controls.Add(Me.TbAwal)
@@ -299,8 +303,6 @@ Partial Class FormKas
     Friend WithEvents BtnTutup As Button
     Friend WithEvents BtnBuka As Button
     Friend WithEvents TbSelisih As TextBox
-    Friend WithEvents TbFisik As TextBox
-    Friend WithEvents TbAkhir As TextBox
     Friend WithEvents TbPengeluaran As TextBox
     Friend WithEvents TbPendapatan As TextBox
     Friend WithEvents TbAwal As TextBox
@@ -316,4 +318,6 @@ Partial Class FormKas
     Friend WithEvents TmSelesai As Timer
     Friend WithEvents DtpSelesai As DateTimePicker
     Friend WithEvents Label8 As Label
+    Friend WithEvents TbFisik As TextBox
+    Friend WithEvents MtbAkhir As MaskedTextBox
 End Class

@@ -28,6 +28,7 @@ Partial Class FormPay
         Me.MenuLogout = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.numArea = New System.Windows.Forms.NumericUpDown()
         Me.LbUser = New System.Windows.Forms.Label()
+        Me.BtnLogout = New System.Windows.Forms.Button()
         CType(Me.MenuUtama, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numArea, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -43,8 +44,9 @@ Partial Class FormPay
         Me.MenuUtama.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuUtama.Name = "MenuUtama"
         Me.MenuUtama.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay
+        Me.MenuUtama.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized
         Me.MenuUtama.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden
-        Me.MenuUtama.Size = New System.Drawing.Size(250, 720)
+        Me.MenuUtama.Size = New System.Drawing.Size(48, 720)
         Me.MenuUtama.TabIndex = 4
         Me.MenuUtama.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -96,11 +98,21 @@ Partial Class FormPay
         Me.LbUser.TabIndex = 6
         Me.LbUser.Text = "Label1"
         '
+        'BtnLogout
+        '
+        Me.BtnLogout.Location = New System.Drawing.Point(587, 639)
+        Me.BtnLogout.Name = "BtnLogout"
+        Me.BtnLogout.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLogout.TabIndex = 7
+        Me.BtnLogout.Text = "Logout"
+        Me.BtnLogout.UseVisualStyleBackColor = True
+        '
         'FormPay
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.BtnLogout)
         Me.Controls.Add(Me.LbUser)
         Me.Controls.Add(Me.numArea)
         Me.Controls.Add(Me.MenuUtama)
@@ -120,4 +132,5 @@ Partial Class FormPay
     Friend WithEvents MenuLogout As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents numArea As NumericUpDown
     Friend WithEvents LbUser As Label
+    Friend WithEvents BtnLogout As Button
 End Class

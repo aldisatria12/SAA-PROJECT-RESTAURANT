@@ -17,6 +17,11 @@ Public Class FormPay
         MenuPay.Enabled = False
         Me.Left = 0
         Me.Top = 0
+        If LbUser.Text = "Waiter" Then
+            BtnLogout.Visible = True
+        ElseIf LbUser.text = "Cashier" Then
+            BtnLogout.Visible = False
+        End If
         refreshDT()
         If dt_table.Rows.Count Mod 10 = 0 Then
             numArea.Minimum = 1
@@ -196,7 +201,7 @@ Public Class FormPay
     End Sub
 
     Private Sub MenuKas_Click(sender As Object, e As EventArgs) Handles MenuKas.Click
-        'Me.Hide()
+        Me.Hide()
         FormKas.MdiParent = formParent
         FormKas.Show()
     End Sub
@@ -218,11 +223,11 @@ Public Class FormPay
         End Try
     End Sub
 
-    Private Sub MenuPay_Click(sender As Object, e As EventArgs) Handles MenuPay.Click
-
+    Private Sub MenuLogout_Click(sender As Object, e As EventArgs) Handles MenuLogout.Click
+        Me.Close()
     End Sub
 
-    Private Sub MenuLogout_Click(sender As Object, e As EventArgs) Handles MenuLogout.Click
-
+    Private Sub BtnLogout_Click(sender As Object, e As EventArgs) Handles BtnLogout.Click
+        Me.Close()
     End Sub
 End Class

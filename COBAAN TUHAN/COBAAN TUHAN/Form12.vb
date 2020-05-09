@@ -104,8 +104,9 @@ Public Class FormCheck
             MsgBox("Success")
             'Call FormPay.refrespb()
             'Call FormPay.refreshlb()
-            FormMenu.Hide()
-            Me.Hide()
+            FormCustomer.Close()
+            FormMenu.Close()
+            Me.Close()
         Catch ex As Exception
             sqlconnect.Close()
             MsgBox(ex.Message)
@@ -114,7 +115,7 @@ Public Class FormCheck
     End Sub
 
     Private Sub PbBack_Click(sender As Object, e As EventArgs) Handles PbBack.Click
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Sub isiDselling(i)

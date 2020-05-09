@@ -48,7 +48,6 @@ Partial Class Formbayar
         '
         'NUDangka
         '
-        Me.NUDangka.DecimalPlaces = 3
         Me.NUDangka.Increment = New Decimal(New Integer() {50000, 0, 0, 0})
         Me.NUDangka.Location = New System.Drawing.Point(188, 101)
         Me.NUDangka.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})

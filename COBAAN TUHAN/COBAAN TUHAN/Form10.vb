@@ -114,6 +114,6 @@ Public Class FormMenu
                 MsgBox(ex.Message)
             End Try
         End If
-        Me.Hide()
+        Me.Close()
     End Sub
 End Class
