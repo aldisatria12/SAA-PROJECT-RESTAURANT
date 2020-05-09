@@ -9,6 +9,8 @@ Public Class FormPay
     Public pb(4, 1) As PictureBox
     Dim lb(4, 1) As Label
     Dim dt_table As New DataTable
+    Public dtTambah As New DataTable
+    Public tambah As Integer
     Public tekan As String
 
     Sub FormPay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -71,9 +73,9 @@ Public Class FormPay
 
     Sub clickpb(sender As Object, e As EventArgs)
         If LbUser.Text = "Waiter" Then
+            FormCustomer.Q = sender.tag.ToString
             If sender.backcolor = Color.Green Then
                 Try
-                    FormCustomer.Q = sender.tag.ToString
                     FormCustomer.dtCustomer = New DataTable
                     sqlquery = "select customer_id, customer_name from customer"
                     sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
@@ -84,9 +86,21 @@ Public Class FormPay
                     tekan = sender.tag.ToString
                     FormCustomer.Show()
                 Catch ex As Exception
-                    sqlconnect.Close()
                     MsgBox(ex.Message)
                 End Try
+            ElseIf sender.backcolor = Color.Red Then
+                tambah = 1
+                dtTambah = New DataTable
+                sqlquery = "select invoice_id, s.customer_id, customer_name
+                            from selling s, customer c
+                            where s.customer_id = c.customer_id and s.selling_status = 0 and s.table_id = '" + sender.tag.ToString + "';"
+                sqlcommand = New MySqlCommand(sqlquery, sqlconnect)
+                sqladapter = New MySqlDataAdapter(sqlcommand)
+                sqladapter.Fill(dtTambah)
+                FormMenu.LbCust.Text = dtTambah.Rows(0).Item(2).ToString
+                FormMenu.LbTable.Text = sender.tag.ToString.Substring(2, 2)
+                FormMenu.MdiParent = formParent
+                FormMenu.Show()
             End If
         ElseIf LbUser.Text = "Cashier" Then
             If sender.backcolor = Color.Red Then

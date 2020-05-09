@@ -100,20 +100,18 @@ Public Class FormMenu
     End Sub
 
     Private Sub PbBack_Click(sender As Object, e As EventArgs) Handles PbBack.Click
-        Try
-            sqlconnect.Open()
-            query = "Update `table` SET table_status = 1 WHERE table_id = '" + FormCustomer.Q + "';"
-            sqlcommand = New MySqlCommand(query, sqlconnect)
-            sqlcommand.ExecuteNonQuery()
-            sqlconnect.Close()
-        Catch ex As Exception
-            sqlconnect.Close()
-            MsgBox(ex.Message)
-        End Try
+        If FormPay.tambah = 0 Then
+            Try
+                sqlconnect.Open()
+                query = "Update `table` SET table_status = 1 WHERE table_id = '" + FormCustomer.Q + "';"
+                sqlcommand = New MySqlCommand(query, sqlconnect)
+                sqlcommand.ExecuteNonQuery()
+                sqlconnect.Close()
+            Catch ex As Exception
+                sqlconnect.Close()
+                MsgBox(ex.Message)
+            End Try
+        End If
         Me.Hide()
-    End Sub
-
-    Private Sub DgvMenu_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvMenu.CellContentClick
-
     End Sub
 End Class

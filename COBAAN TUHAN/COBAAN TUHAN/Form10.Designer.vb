@@ -37,7 +37,7 @@ Partial Class FormMenu
         '
         Me.LbCust.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LbCust.AutoSize = True
-        Me.LbCust.Location = New System.Drawing.Point(235, 90)
+        Me.LbCust.Location = New System.Drawing.Point(651, 90)
         Me.LbCust.Name = "LbCust"
         Me.LbCust.Size = New System.Drawing.Size(39, 13)
         Me.LbCust.TabIndex = 9
@@ -47,7 +47,7 @@ Partial Class FormMenu
         '
         Me.LbTable.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LbTable.AutoSize = True
-        Me.LbTable.Location = New System.Drawing.Point(235, 55)
+        Me.LbTable.Location = New System.Drawing.Point(651, 55)
         Me.LbTable.Name = "LbTable"
         Me.LbTable.Size = New System.Drawing.Size(39, 13)
         Me.LbTable.TabIndex = 8
