@@ -103,8 +103,12 @@
 
     Private Sub TbFisik_TextChanged(sender As Object, e As EventArgs) Handles TbFisik.TextChanged
         Call Textbox(sender, e)
-        If Buka = 1 Then
-            TbSelisih.Text = CInt(TbFisik.Text) - CInt(MtbAkhir.Text)
+        If TbFisik.Text.Length > 0 Then
+            If Buka = 1 Then
+                TbSelisih.Text = CInt(TbFisik.Text) - CInt(MtbAkhir.Text)
+            End If
+        Else
+            TbSelisih.Text = ""
         End If
     End Sub
 
