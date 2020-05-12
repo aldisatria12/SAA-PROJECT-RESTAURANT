@@ -8,6 +8,7 @@ Public Class FormMenu
     Dim ImgDg As New DataGridViewImageColumn
     Dim ImgDg2 As New DataGridViewImageColumn
     Dim dtSimpan As New DataTable
+    Public dtOrder(20) As DataTable
     Dim A As Integer 'Quantity
     Public R As Integer 'simpan row
     Dim C As String() 'rows insert datatable
@@ -25,12 +26,12 @@ Public Class FormMenu
             DgvMenu.Columns.Add("Quantity", "Quantity")
             DgvMenu.Columns.Add("Keterangan", "Keterangan")
             DgvMenu.Columns.Add(ImgDg)
-            ImgDg.HeaderText = "Action"
+            ImgDg.HeaderText = "Add"
             ImgDg.Image = My.Resources.plus
             ImgDg.ImageLayout = ImageLayout.Stretch
             ImgDg.Name = "ImgDg"
             DgvMenu.Columns.Add(ImgDg2)
-            ImgDg2.HeaderText = "Action"
+            ImgDg2.HeaderText = "Remove"
             ImgDg2.Image = My.Resources.minus
             ImgDg2.ImageLayout = ImageLayout.Stretch
             ImgDg2.Name = "ImgDg2"

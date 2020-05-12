@@ -52,6 +52,7 @@ Partial Class formLogin
         Me.tbPassword.Location = New System.Drawing.Point(804, 400)
         Me.tbPassword.Margin = New System.Windows.Forms.Padding(2)
         Me.tbPassword.Name = "tbPassword"
+        Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbPassword.Size = New System.Drawing.Size(261, 20)
         Me.tbPassword.TabIndex = 2
         '

@@ -102,8 +102,6 @@ Public Class FormCheck
             sqlconnect.Close()
             FormPay.tambah = 0
             MsgBox("Success")
-            'Call FormPay.refrespb()
-            'Call FormPay.refreshlb()
             FormCustomer.Close()
             FormMenu.Close()
             Me.Close()

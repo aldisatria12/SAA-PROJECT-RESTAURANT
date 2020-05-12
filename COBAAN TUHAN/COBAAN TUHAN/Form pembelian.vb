@@ -9,15 +9,17 @@ Public Class Form_pembelian
     Dim penyimpan2 As New Integer
     Dim penyimpankali As Integer
     Dim invoice_id As String
+    Dim supdate As Integer
+    Dim dtdmenu As New DataTable
 
 
-    Private Sub MenuKas_Click(sender As Object, e As EventArgs) Handles MenuKas.Click
+    Private Sub MenuKas_Click(sender As Object, e As EventArgs)
         Me.Close()
         FormKas.MdiParent = formParent
         FormKas.Show()
     End Sub
 
-    Private Sub MenuPay_Click(sender As Object, e As EventArgs) Handles MenuPay.Click
+    Private Sub MenuPay_Click(sender As Object, e As EventArgs)
         Me.Close()
         FormPay.MdiParent = formParent
         FormPay.Show()
@@ -61,6 +63,28 @@ Public Class Form_pembelian
             sqlconnect.Close()
             MsgBox(ex.Message)
         End Try
+        Try
+            sqlconnect.Open()
+            For i = 0 To DGVpembelian.Rows.Count - 2
+                dtdmenu = New DataTable
+                sqlQuery = "select d.menu_id, menu_name, d.ingredients_id, amount_used, stocks
+                from dmenu d, menu m, ingredients i
+                where m.menu_id = d.menu_id and m.menu_name = '" + DGVpembelian.Rows(i).Cells(1).Value.ToString + "' and d.ingredients_id = i.ingredients_id;"
+                sqlcommand = New MySqlCommand(sqlQuery, sqlconnect)
+                sqladapter = New MySqlDataAdapter(sqlcommand)
+                sqladapter.Fill(dtdmenu)
+                For j = 0 To dtdmenu.Rows.Count - 1
+                    supdate = CInt(dtdmenu.Rows(j).Item(4)) - CInt(dtdmenu.Rows(j).Item(3))
+                    sqlQuery = "Update ingredients SET stocks = " + supdate.ToString + " WHERE ingredients_id = '" + dtdmenu.Rows(j).Item(2).ToString + "';"
+                    sqlcommand = New MySqlCommand(sqlQuery, sqlconnect)
+                    sqlcommand.ExecuteNonQuery()
+                Next
+            Next
+            sqlconnect.Close()
+        Catch ex As Exception
+            sqlconnect.Close()
+            MsgBox(ex.Message)
+        End Try
         FormKas.Pendapatan += CInt(LLangkatotal.Text)
         Me.Close()
     End Sub
@@ -93,5 +117,9 @@ and s.table_id= '" + FormPay.tekan + "' and s.selling_status = 0 ;"
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+
+    Private Sub PbBack_Click(sender As Object, e As EventArgs) Handles PbBack.Click
+        Me.Close()
     End Sub
 End Class
