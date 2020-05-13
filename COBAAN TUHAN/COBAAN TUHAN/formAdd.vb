@@ -15,7 +15,7 @@ Public Class formAdd
     Dim lbID As New Label
     Dim lbName As New Label
     Dim lbStat As New Label
-    Dim tbID As New TextBox
+    Public tbID As New TextBox
     Dim tbName As New TextBox
     Dim cmStat As New ComboBox
     'Menu
@@ -40,17 +40,24 @@ Public Class formAdd
                 locy(i) = locy(i - 1) + 40
             End If
         Next
+
+        If formInsert.mode = "menu" And formInsert.editmode = True Then
+            btIngredient.Visible = True
+        Else
+            btIngredient.Visible = False
+        End If
+
         If formInsert.mode = "menu" Then
-            lbAdd.Text = "Form Insert Menu"
+            lbAdd.Text = "Form Menu"
             lbAdd.BackColor = Color.FromArgb(238, 194, 100)
         ElseIf formInsert.mode = "ingredients" Then
-            lbAdd.Text = "Form Insert Ingredients"
+            lbAdd.Text = "Form Ingredients"
             lbAdd.BackColor = Color.FromArgb(238, 194, 100)
         ElseIf formInsert.mode = "table" Then
-            lbAdd.Text = "Form Insert Table"
+            lbAdd.Text = "Form Table"
             lbAdd.BackColor = Color.FromArgb(238, 194, 100)
         ElseIf formInsert.mode = "category" Then
-            lbAdd.Text = "Form Insert Category"
+            lbAdd.Text = "Form Category"
             lbAdd.BackColor = Color.FromArgb(238, 194, 100)
         End If
         AddHandler tbName.TextChanged, AddressOf autoID
@@ -78,49 +85,65 @@ Public Class formAdd
         Me.Close()
     End Sub
     Private Sub btAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
-        If btAdd.Text = "Add" Then
-            Try
-                sqlConnect.Open()
+
+        If formInsert.mode = "menu" And (tbID.Text = "" Or tbName.Text = "" Or cmStat.Text = "" Or cmCat.Text = "" Or tbPrice.Text = "") Then
+            MsgBox("Fill all the blank(s)")
+        ElseIf formInsert.mode = "ingredients" And (tbID.Text = "" Or tbName.Text = "" Or cmStat.Text = "" Or tbStock.Text = "") Then
+            MsgBox("Fill all the blank(s)")
+        ElseIf formInsert.mode = "table" And (tbID.Text = "" Or tbName.Text = "" Or cmStat.Text = "" Or cmSeat.Text = "") Then
+            MsgBox("Fill all the blank(s)")
+        ElseIf formInsert.mode = "category" And (tbID.Text = "" Or tbName.Text = "" Or cmStat.Text = "") Then
+            MsgBox("Fill all the blank(s)")
+        Else
+            If btAdd.Text = "Add" Then
+                Try
+                    sqlConnect.Open()
+                    If formInsert.mode = "menu" Then
+                        sqlQuery = "INSERT INTO menu VALUES ('" + tbID.Text + "','" + tbName.Text + "','" + cmCat.SelectedValue.ToString + "','" + tbPrice.Text.ToString + "','" + cmStat.SelectedIndex.ToString + "', 0);"
+                    ElseIf formInsert.mode = "ingredients" Then
+                        sqlQuery = "INSERT INTO ingredients VALUES ('" + tbID.Text + "','" + tbName.Text + "','" + tbStock.Text.ToString + "','" + cmStat.SelectedIndex.ToString + "', 0);"
+                    ElseIf formInsert.mode = "table" Then
+                        sqlQuery = "INSERT INTO `table` VALUES ('" + tbID.Text + "','" + tbName.Text + "','" + cmSeat.Text.ToString + "','" + cmStat.SelectedIndex.ToString + "', 0);"
+                    ElseIf formInsert.mode = "category" Then
+                        sqlQuery = "INSERT INTO category VALUES ('" + tbID.Text + "','" + tbName.Text + "','" + cmStat.SelectedIndex.ToString + "', 0);"
+                    End If
+                    sqlCommand = New MySqlCommand(sqlQuery, sqlConnect)
+                    sqlCommand.ExecuteNonQuery()
+                    MsgBox("Inserting new " + formInsert.mode + " : '" + tbID.Text + "' Success!")
+                    sqlConnect.Close()
+                Catch ex As Exception
+                    sqlConnect.Close()
+                    MsgBox(ex.Message)
+                End Try
+            ElseIf btAdd.Text = "Edit" Then
+                Try
+                    sqlConnect.Open()
+                    sqlQuery = "UPDATE `" + formInsert.mode.ToString + "` SET " + formInsert.mode.ToString + "_name = '" + tbName.Text.ToString + "', " + formInsert.mode.ToString + "_status = '" + cmStat.SelectedIndex.ToString + "'"
+                    If formInsert.mode = "menu" Then
+                        sqlQuery += ", category_id = '" + cmCat.SelectedValue.ToString + "', sell_price = '" + tbPrice.Text.ToString + "'"
+                    ElseIf formInsert.mode = "ingredients" Then
+                        sqlQuery += ", `stocks` = '" + tbStock.Text.ToString + "'"
+                    ElseIf formInsert.mode = "table" Then
+                        sqlQuery += ", seats_available = '" + cmSeat.Value.ToString + "'"
+                    End If
+                    sqlQuery += " WHERE " + formInsert.mode.ToString + "_id = '" + tbID.Text.ToString + "';"
+                    sqlCommand = New MySqlCommand(sqlQuery, sqlConnect)
+                    sqlCommand.ExecuteNonQuery()
+                    MsgBox("Updating " + formInsert.mode + " data : '" + tbID.Text + "' Success!")
+                    sqlConnect.Close()
+                Catch ex As Exception
+                    sqlConnect.Close()
+                    MsgBox(ex.Message)
+                End Try
+            End If
+            formInsert.refreshDGV()
+            If btAdd.Text = "Add" Then
                 If formInsert.mode = "menu" Then
-                    sqlQuery = "INSERT INTO menu VALUES ('" + tbID.Text + "','" + tbName.Text + "','" + cmCat.SelectedValue.ToString + "','" + tbPrice.ToString + "','" + cmStat.SelectedIndex.ToString + "', 0);"
-                ElseIf formInsert.mode = "ingredients" Then
-                    sqlQuery = "INSERT INTO ingredients VALUES ('" + tbID.Text + "','" + tbName.Text + "','" + tbStock.Text.ToString + "','" + cmStat.SelectedIndex.ToString + "', 0);"
-                ElseIf formInsert.mode = "table" Then
-                    sqlQuery = "INSERT INTO table VALUES ('" + tbID.Text + "','" + tbName.Text + "','" + cmSeat.Text.ToString + "','" + cmStat.SelectedIndex.ToString + "', 0);"
-                ElseIf formInsert.mode = "category" Then
-                    sqlQuery = "INSERT INTO category VALUES ('" + tbID.Text + "','" + tbName.Text + "','" + cmStat.SelectedIndex.ToString + "', 0);"
+                    FormIngredients.Show()
                 End If
-                sqlCommand = New MySqlCommand(sqlQuery, sqlConnect)
-                sqlCommand.ExecuteNonQuery()
-                MsgBox("Inserting new " + formInsert.mode + " : '" + tbID.Text + "' Success!")
-                sqlConnect.Close()
-            Catch ex As Exception
-                sqlConnect.Close()
-                MsgBox(ex.Message)
-            End Try
-        ElseIf btAdd.Text = "Edit" Then
-            Try
-                sqlConnect.Open()
-                sqlQuery = "UPDATE `" + formInsert.mode.ToString + "` SET " + formInsert.mode.ToString + "_name = '" + tbName.Text.ToString + "', " + formInsert.mode.ToString + "_status = '" + cmStat.SelectedIndex.ToString + "'"
-                If formInsert.mode = "menu" Then
-                    sqlQuery += ", category_id = '" + cmCat.SelectedValue.ToString + "', sell_price = '" + tbPrice.Text.ToString + "'"
-                ElseIf formInsert.mode = "ingredients" Then
-                    sqlQuery += ", `stocks` = '" + tbStock.Text.ToString + "'"
-                ElseIf formInsert.mode = "table" Then
-                    sqlQuery += ", seats_available = '" + cmSeat.Value.ToString + "'"
-                End If
-                sqlQuery += " WHERE " + formInsert.mode.ToString + "_id = '" + tbID.Text.ToString + "';"
-                sqlCommand = New MySqlCommand(sqlQuery, sqlConnect)
-                sqlCommand.ExecuteNonQuery()
-                MsgBox("Updating " + formInsert.mode + " data : '" + tbID.Text + "' Success!")
-                sqlConnect.Close()
-            Catch ex As Exception
-                sqlConnect.Close()
-                MsgBox(ex.Message)
-            End Try
+            End If
+            Me.Close()
         End If
-        formInsert.refreshDGV()
-        Me.Close()
     End Sub
 
     Sub autoID()
@@ -152,6 +175,22 @@ Public Class formAdd
         End If
     End Sub
 
+    Sub eraseData()
+        tbID.Text = ""
+        tbName.Text = ""
+        cmStat.Text = ""
+        ''' Menu
+        If formInsert.mode = "menu" Then
+            cmCat.Text = ""
+            tbPrice.Text = ""
+        ElseIf formInsert.mode = "ingredients" Then
+            ''' Ingredient
+            tbStock.Text = ""
+        ElseIf formInsert.mode = "table" Then
+            ''' Table
+            cmSeat.Value = ""
+        End If
+    End Sub
     Sub fillingData()
         tbID.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("ID")).ToString
         tbName.Text = (formInsert.dt_View.Rows(formInsert.dgAdmin.CurrentRow.Index)("Name")).ToString
@@ -348,4 +387,7 @@ Public Class formAdd
         ''''''''''''''''''''''''''''
     End Sub
 
+    Private Sub btIngredient_Click(sender As Object, e As EventArgs) Handles btIngredient.Click
+        FormIngredients.Show()
+    End Sub
 End Class

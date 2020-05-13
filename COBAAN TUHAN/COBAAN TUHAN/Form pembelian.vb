@@ -85,11 +85,14 @@ Public Class Form_pembelian
             sqlconnect.Close()
             MsgBox(ex.Message)
         End Try
-        FormKas.Pendapatan += CInt(LLangkatotal.Text)
+        formParent.Pendapatan += CInt(LLangkatotal.Text)
         Me.Close()
     End Sub
 
     Private Sub Form_pembelian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Top = 0
+        Me.Left = 0
+        Me.MdiParent = formParent
         Try
             dt_menu = New DataTable
             sqlQuery = "select s.invoice_id, menu_name, amount, sell_price `harga Satuan`

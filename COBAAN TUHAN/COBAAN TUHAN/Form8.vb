@@ -17,6 +17,7 @@ Public Class FormPay
         MenuPay.Enabled = False
         Me.Left = 0
         Me.Top = 0
+        Me.MdiParent = formParent
         If LbUser.Text = "Waiter" Then
             BtnLogout.Visible = True
         ElseIf LbUser.text = "Cashier" Then
@@ -91,6 +92,9 @@ Public Class FormPay
                     FormCustomer.LbTable.Text = sender.tag.ToString.Substring(2, 2)
                     FormCustomer.TbCust.Text = ""
                     tekan = sender.tag.ToString
+                    FormCustomer.MdiParent = formParent
+                    FormCustomer.Top = 0
+                    FormCustomer.Left = 0
                     FormCustomer.Show()
                 Catch ex As Exception
                     MsgBox(ex.Message)
@@ -107,6 +111,8 @@ Public Class FormPay
                 FormMenu.LbCust.Text = dtTambah.Rows(0).Item(2).ToString
                 FormMenu.LbTable.Text = sender.tag.ToString.Substring(2, 2)
                 FormMenu.MdiParent = formParent
+                FormMenu.Top = 0
+                FormMenu.Left = 0
                 FormMenu.Show()
             End If
         ElseIf LbUser.Text = "Cashier" Then
@@ -116,6 +122,8 @@ Public Class FormPay
                     FormCustomer.Q = sender.tag.ToString
                     FormCustomer.dtCustomer = New DataTable
                     tekan = sender.tag.ToString
+                    Form_pembelian.Top = 0
+                    Form_pembelian.Left = 0
                     Form_pembelian.Show()
                 Catch ex As Exception
                     sqlconnect.Close()
@@ -207,9 +215,11 @@ Public Class FormPay
     End Sub
 
     Private Sub MenuKas_Click(sender As Object, e As EventArgs) Handles MenuKas.Click
-        Me.Hide()
         FormKas.MdiParent = formParent
+        FormKas.Top = 0
+        FormKas.Left = 0
         FormKas.Show()
+        Me.Close()
     End Sub
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles numArea.ValueChanged

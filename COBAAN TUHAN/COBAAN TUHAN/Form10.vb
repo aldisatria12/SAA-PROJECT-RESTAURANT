@@ -9,7 +9,6 @@ Public Class FormMenu
     Dim ImgDg2 As New DataGridViewImageColumn
     Dim dtSimpan As New DataTable
     Dim dtTambah2 As New DataTable
-    Public dtOrder(20) As DataTable
     Dim A As Integer 'Quantity
     Public R As Integer 'simpan row
     Dim C As String() 'rows insert datatable

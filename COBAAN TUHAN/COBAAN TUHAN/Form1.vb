@@ -23,4 +23,9 @@
             formAdmin.Show()
         End If
     End Sub
+
+    Private Sub formLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Top = 0
+        Me.Left = 0
+    End Sub
 End Class

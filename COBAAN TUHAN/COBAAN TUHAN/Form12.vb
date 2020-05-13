@@ -13,6 +13,9 @@ Public Class FormCheck
     Dim amount As Integer
     Dim ada As Integer 'True False
     Private Sub FormCheck_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Top = 0
+        Me.Left = 0
+        Me.MdiParent = formParent
         query = "select menu_id, menu_name from menu"
         sqlcommand = New MySqlCommand(query, sqlconnect)
         sqladapter = New MySqlDataAdapter(sqlcommand)
@@ -61,16 +64,16 @@ Public Class FormCheck
                 query = "insert into selling values ('" + D + "', '" + FormCustomer.G + "','" + FormCustomer.Q + "', 0, 0, 0);"
                 sqlcommand = New MySqlCommand(query, sqlconnect)
                 sqlcommand.ExecuteNonQuery()
-                For i = 0 To DgvCheck.Rows.Count - 2
-                    For j = 0 To dtMenu2.Rows.Count - 1
-                        If DgvCheck.Rows(i).Cells(0).Value.ToString = dtMenu2.Rows(j).Item(1).ToString Then
-                            F = dtMenu2.Rows(j).Item(0).ToString
-                        End If
-                    Next
-                    query = "insert into dselling values ('" + D + "', '" + F + "', " + DgvCheck.Rows(i).Cells(1).Value.ToString + ", '" + DgvCheck.Rows(i).Cells(2).Value.ToString + "');"
-                    sqlcommand = New MySqlCommand(query, sqlconnect)
-                    sqlcommand.ExecuteNonQuery()
-                Next
+                'For i = 0 To DgvCheck.Rows.Count - 2
+                '    For j = 0 To dtMenu2.Rows.Count - 1
+                '        If DgvCheck.Rows(i).Cells(0).Value.ToString = dtMenu2.Rows(j).Item(1).ToString Then
+                '            F = dtMenu2.Rows(j).Item(0).ToString
+                '        End If
+                '    Next
+                '    query = "insert into dselling values ('" + D + "', '" + F + "', " + DgvCheck.Rows(i).Cells(1).Value.ToString + ", '" + DgvCheck.Rows(i).Cells(2).Value.ToString + "');"
+                '    sqlcommand = New MySqlCommand(query, sqlconnect)
+                '    sqlcommand.ExecuteNonQuery()
+                'Next
                 For i = 0 To DgvCheck.Rows.Count - 2
                     Call isiDselling(i)
                 Next
@@ -125,7 +128,7 @@ Public Class FormCheck
                     F = dtMenu2.Rows(j).Item(0).ToString
                 End If
             Next
-            query = "insert into dselling values ('" + D + "', '" + F + "', " + DgvCheck.Rows(i).Cells(1).Value.ToString + ");"
+            query = "insert into dselling values ('" + D + "', '" + F + "', " + DgvCheck.Rows(i).Cells(1).Value.ToString + ",'" + DgvCheck.Rows(i).Cells(2).Value.ToString + "');"
             sqlcommand = New MySqlCommand(query, sqlconnect)
             sqlcommand.ExecuteNonQuery()
         Catch ex As Exception

@@ -194,6 +194,12 @@
     <Compile Include="Formbayar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormIngredients.Designer.vb">
+      <DependentUpon>FormIngredients.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormIngredients.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formParent.Designer.vb">
       <DependentUpon>formParent.vb</DependentUpon>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formbayar.resx">
       <DependentUpon>Formbayar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIngredients.resx">
+      <DependentUpon>FormIngredients.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formParent.resx">
       <DependentUpon>formParent.vb</DependentUpon>

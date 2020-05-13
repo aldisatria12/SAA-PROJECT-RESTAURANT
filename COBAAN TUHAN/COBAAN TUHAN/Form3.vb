@@ -22,7 +22,7 @@ Public Class formInsert
         pbDel.Image = My.Resources.delete
         pbDel.ImageLayout = DataGridViewImageCellLayout.Zoom
 
-        pbEdt.Name = "pbDel"
+        pbEdt.Name = "pbEdt"
         pbEdt.HeaderText = ""
         pbEdt.Width = 25
         pbEdt.Image = My.Resources.edit2
@@ -137,8 +137,8 @@ Public Class formInsert
     End Sub
 
     Private Sub btAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
-        formAdd.Show()
         editmode = False
+        formAdd.Show()
     End Sub
 
     Private Sub btHome_Click(sender As Object, e As EventArgs) Handles btHome.Click
