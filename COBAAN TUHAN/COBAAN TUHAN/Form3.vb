@@ -8,21 +8,27 @@ Public Class formInsert
     Dim sqlQuery As String
     Public dt_View As New DataTable
     Public mode As String
-    Dim btDel As New DataGridViewButtonColumn
-    Dim btEdt As New DataGridViewButtonColumn
+    Dim pbDel As New DataGridViewImageColumn
+    Dim pbEdt As New DataGridViewImageColumn
     Public editmode As Boolean
     Private Sub formInsert_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Top = 0
         Me.Left = 0
         ctMenu.Checked = True
-        btDel.HeaderText = "Delete Data"
-        btDel.Text = "Delete"
-        btDel.Name = "btDel"
-        btDel.UseColumnTextForButtonValue = True
-        btEdt.HeaderText = "Edit Data"
-        btEdt.Text = "Edit"
-        btEdt.Name = "btEdt"
-        btEdt.UseColumnTextForButtonValue = True
+
+        pbDel.Name = "pbDel"
+        pbDel.HeaderText = ""
+        pbDel.Width = 25
+        pbDel.Image = My.Resources.delete
+        pbDel.ImageLayout = DataGridViewImageCellLayout.Zoom
+
+        pbEdt.Name = "pbDel"
+        pbEdt.HeaderText = ""
+        pbEdt.Width = 25
+        pbEdt.Image = My.Resources.edit2
+        pbEdt.ImageLayout = DataGridViewImageCellLayout.Zoom
+
+        dgAdmin.BackgroundColor = Color.White
     End Sub
     Sub buttonradio(sender As Object, e As EventArgs) Handles ctKategorimenu.CheckedChanged, ctKursimeja.CheckedChanged, ctMenu.CheckedChanged, ctStokbahan.CheckedChanged
         If sender Is ctMenu And ctMenu.Checked = True Then
@@ -96,8 +102,8 @@ Public Class formInsert
                 ElseIf mode = "category" Then
                     .Columns("Status").DisplayIndex = 2
                 End If
-                .Columns.Add(btEdt)
-                .Columns.Add(btDel)
+                .Columns.Add(pbEdt)
+                .Columns.Add(pbDel)
             End With
         Catch ex As Exception
 
