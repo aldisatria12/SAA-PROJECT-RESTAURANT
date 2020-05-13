@@ -33,9 +33,10 @@ Partial Class formAdd
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(-141, 122)
+        Me.PictureBox1.Location = New System.Drawing.Point(-212, 188)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox1.Size = New System.Drawing.Size(150, 77)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -44,54 +45,59 @@ Partial Class formAdd
         Me.pbAdd.BackColor = System.Drawing.Color.Transparent
         Me.pbAdd.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.btTemplate
         Me.pbAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pbAdd.Location = New System.Drawing.Point(622, 12)
+        Me.pbAdd.Location = New System.Drawing.Point(933, 18)
+        Me.pbAdd.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.pbAdd.Name = "pbAdd"
-        Me.pbAdd.Size = New System.Drawing.Size(227, 73)
+        Me.pbAdd.Size = New System.Drawing.Size(340, 112)
         Me.pbAdd.TabIndex = 1
         Me.pbAdd.TabStop = False
         '
         'lbAdd
         '
         Me.lbAdd.AutoSize = True
-        Me.lbAdd.BackColor = System.Drawing.Color.White
+        Me.lbAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.lbAdd.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbAdd.Location = New System.Drawing.Point(652, 37)
+        Me.lbAdd.Location = New System.Drawing.Point(978, 57)
+        Me.lbAdd.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbAdd.Name = "lbAdd"
-        Me.lbAdd.Size = New System.Drawing.Size(144, 21)
+        Me.lbAdd.Size = New System.Drawing.Size(221, 32)
         Me.lbAdd.TabIndex = 2
         Me.lbAdd.Text = "Form Insert Menu"
         '
         'btAdd
         '
-        Me.btAdd.Location = New System.Drawing.Point(331, 327)
+        Me.btAdd.Location = New System.Drawing.Point(496, 503)
+        Me.btAdd.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btAdd.Name = "btAdd"
-        Me.btAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btAdd.Size = New System.Drawing.Size(112, 35)
         Me.btAdd.TabIndex = 8
         Me.btAdd.Text = "Add"
         Me.btAdd.UseVisualStyleBackColor = True
         '
         'btBack
         '
-        Me.btBack.Location = New System.Drawing.Point(566, 327)
+        Me.btBack.Location = New System.Drawing.Point(849, 503)
+        Me.btBack.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btBack.Name = "btBack"
-        Me.btBack.Size = New System.Drawing.Size(75, 23)
+        Me.btBack.Size = New System.Drawing.Size(112, 35)
         Me.btBack.TabIndex = 9
         Me.btBack.Text = "Back"
         Me.btBack.UseVisualStyleBackColor = True
         '
         'formAdd
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources._444634_PEMTQB_849
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(808, 520)
+        Me.ClientSize = New System.Drawing.Size(1212, 800)
         Me.Controls.Add(Me.btBack)
         Me.Controls.Add(Me.btAdd)
         Me.Controls.Add(Me.lbAdd)
         Me.Controls.Add(Me.pbAdd)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "formAdd"

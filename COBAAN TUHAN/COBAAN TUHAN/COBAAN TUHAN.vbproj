@@ -349,5 +349,23 @@
   <ItemGroup>
     <None Include="Resources\how-to-make-a-png-an-icon-2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2813122.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red-tomatoes-tomatoes-wallpaper-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee-core-texture-caffeine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food-pizza-photo-background-wallpaper-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray-concrete-buildings-top-view-wallpaper-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaperflare.com_wallpaper.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

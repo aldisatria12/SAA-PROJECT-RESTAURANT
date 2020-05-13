@@ -122,4 +122,8 @@ and s.table_id= '" + FormPay.tekan + "' and s.selling_status = 0 ;"
     Private Sub PbBack_Click(sender As Object, e As EventArgs) Handles PbBack.Click
         Me.Close()
     End Sub
+
+    Private Sub LLline_Click(sender As Object, e As EventArgs) Handles LLline.Click
+
+    End Sub
 End Class

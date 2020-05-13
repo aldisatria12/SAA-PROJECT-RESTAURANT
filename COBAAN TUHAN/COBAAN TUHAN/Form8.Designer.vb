@@ -41,12 +41,12 @@ Partial Class FormPay
         Me.MenuUtama.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuUtama.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.MenuKas, Me.MenuPay, Me.MenuLogout})
         Me.MenuUtama.Location = New System.Drawing.Point(0, 0)
-        Me.MenuUtama.Margin = New System.Windows.Forms.Padding(2)
+        Me.MenuUtama.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.MenuUtama.Name = "MenuUtama"
         Me.MenuUtama.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay
         Me.MenuUtama.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized
         Me.MenuUtama.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden
-        Me.MenuUtama.Size = New System.Drawing.Size(48, 720)
+        Me.MenuUtama.Size = New System.Drawing.Size(72, 1106)
         Me.MenuUtama.TabIndex = 4
         Me.MenuUtama.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -82,41 +82,48 @@ Partial Class FormPay
         '
         'numArea
         '
-        Me.numArea.Location = New System.Drawing.Point(733, 30)
-        Me.numArea.Margin = New System.Windows.Forms.Padding(2)
+        Me.numArea.Location = New System.Drawing.Point(1100, 46)
         Me.numArea.Name = "numArea"
-        Me.numArea.Size = New System.Drawing.Size(103, 20)
+        Me.numArea.Size = New System.Drawing.Size(154, 26)
         Me.numArea.TabIndex = 5
         Me.numArea.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'LbUser
         '
         Me.LbUser.AutoSize = True
-        Me.LbUser.Location = New System.Drawing.Point(733, 56)
+        Me.LbUser.BackColor = System.Drawing.Color.Transparent
+        Me.LbUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.LbUser.Location = New System.Drawing.Point(1100, 86)
+        Me.LbUser.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LbUser.Name = "LbUser"
-        Me.LbUser.Size = New System.Drawing.Size(39, 13)
+        Me.LbUser.Size = New System.Drawing.Size(63, 20)
         Me.LbUser.TabIndex = 6
         Me.LbUser.Text = "Label1"
         '
         'BtnLogout
         '
-        Me.BtnLogout.Location = New System.Drawing.Point(587, 639)
+        Me.BtnLogout.Location = New System.Drawing.Point(880, 983)
+        Me.BtnLogout.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnLogout.Name = "BtnLogout"
-        Me.BtnLogout.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLogout.Size = New System.Drawing.Size(112, 35)
         Me.BtnLogout.TabIndex = 7
         Me.BtnLogout.Text = "Logout"
         Me.BtnLogout.UseVisualStyleBackColor = True
         '
         'FormPay
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.wallpaperflare_com_wallpaper
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1920, 1106)
         Me.Controls.Add(Me.BtnLogout)
         Me.Controls.Add(Me.LbUser)
         Me.Controls.Add(Me.numArea)
         Me.Controls.Add(Me.MenuUtama)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "FormPay"
         Me.Text = "Form8"
         CType(Me.MenuUtama, System.ComponentModel.ISupportInitialize).EndInit()

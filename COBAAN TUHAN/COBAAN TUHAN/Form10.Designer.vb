@@ -37,9 +37,12 @@ Partial Class FormMenu
         '
         Me.LbCust.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LbCust.AutoSize = True
-        Me.LbCust.Location = New System.Drawing.Point(651, 90)
+        Me.LbCust.BackColor = System.Drawing.Color.Transparent
+        Me.LbCust.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbCust.Location = New System.Drawing.Point(811, 126)
+        Me.LbCust.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LbCust.Name = "LbCust"
-        Me.LbCust.Size = New System.Drawing.Size(39, 13)
+        Me.LbCust.Size = New System.Drawing.Size(63, 20)
         Me.LbCust.TabIndex = 9
         Me.LbCust.Text = "Label4"
         '
@@ -47,45 +50,57 @@ Partial Class FormMenu
         '
         Me.LbTable.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LbTable.AutoSize = True
-        Me.LbTable.Location = New System.Drawing.Point(651, 55)
+        Me.LbTable.BackColor = System.Drawing.Color.Transparent
+        Me.LbTable.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbTable.Location = New System.Drawing.Point(811, 76)
+        Me.LbTable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LbTable.Name = "LbTable"
-        Me.LbTable.Size = New System.Drawing.Size(39, 13)
+        Me.LbTable.Size = New System.Drawing.Size(63, 20)
         Me.LbTable.TabIndex = 8
         Me.LbTable.Text = "Label3"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(505, 90)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(629, 126)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(97, 13)
+        Me.Label2.Size = New System.Drawing.Size(162, 20)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Customer Name    :"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(505, 55)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(629, 76)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(97, 13)
+        Me.Label1.Size = New System.Drawing.Size(158, 20)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Table                    :"
         '
         'DgvMenu
         '
         Me.DgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvMenu.Location = New System.Drawing.Point(303, 124)
+        Me.DgvMenu.Location = New System.Drawing.Point(267, 205)
+        Me.DgvMenu.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DgvMenu.Name = "DgvMenu"
         Me.DgvMenu.ReadOnly = True
         Me.DgvMenu.RowHeadersWidth = 62
-        Me.DgvMenu.Size = New System.Drawing.Size(565, 243)
+        Me.DgvMenu.Size = New System.Drawing.Size(848, 374)
         Me.DgvMenu.TabIndex = 5
         '
         'BtnCheck
         '
-        Me.BtnCheck.Location = New System.Drawing.Point(547, 443)
+        Me.BtnCheck.Location = New System.Drawing.Point(633, 630)
+        Me.BtnCheck.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnCheck.Name = "BtnCheck"
-        Me.BtnCheck.Size = New System.Drawing.Size(75, 23)
+        Me.BtnCheck.Size = New System.Drawing.Size(112, 35)
         Me.BtnCheck.TabIndex = 10
         Me.BtnCheck.Text = "Checkout"
         Me.BtnCheck.UseVisualStyleBackColor = True
@@ -94,18 +109,21 @@ Partial Class FormMenu
         '
         Me.PbBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.PbBack.Image = Global.COBAAN_TUHAN.My.Resources.Resources.how_to_make_a_png_an_icon_2
-        Me.PbBack.Location = New System.Drawing.Point(37, 28)
+        Me.PbBack.Location = New System.Drawing.Point(56, 43)
+        Me.PbBack.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PbBack.Name = "PbBack"
-        Me.PbBack.Size = New System.Drawing.Size(43, 40)
+        Me.PbBack.Size = New System.Drawing.Size(64, 62)
         Me.PbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbBack.TabIndex = 16
         Me.PbBack.TabStop = False
         '
         'FormMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(853, 468)
+        Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.red_tomatoes_tomatoes_wallpaper_preview
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.PbBack)
         Me.Controls.Add(Me.BtnCheck)
         Me.Controls.Add(Me.LbCust)
@@ -114,6 +132,7 @@ Partial Class FormMenu
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DgvMenu)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "FormMenu"
         Me.Text = "Form10"
         CType(Me.DgvMenu, System.ComponentModel.ISupportInitialize).EndInit()

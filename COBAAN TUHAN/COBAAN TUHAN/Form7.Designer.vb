@@ -40,12 +40,12 @@ Partial Class FormUtamaKasir
         Me.MenuUtama.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuUtama.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.MenuKas, Me.MenuPay, Me.MenuLogout})
         Me.MenuUtama.Location = New System.Drawing.Point(0, 0)
-        Me.MenuUtama.Margin = New System.Windows.Forms.Padding(2)
+        Me.MenuUtama.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.MenuUtama.Name = "MenuUtama"
         Me.MenuUtama.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay
         Me.MenuUtama.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized
         Me.MenuUtama.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden
-        Me.MenuUtama.Size = New System.Drawing.Size(48, 720)
+        Me.MenuUtama.Size = New System.Drawing.Size(72, 1106)
         Me.MenuUtama.TabIndex = 3
         Me.MenuUtama.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -82,11 +82,13 @@ Partial Class FormUtamaKasir
         'LbUser
         '
         Me.LbUser.AutoSize = True
-        Me.LbUser.BackColor = System.Drawing.Color.Transparent
+        Me.LbUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.LbUser.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbUser.Location = New System.Drawing.Point(1202, 58)
+        Me.LbUser.ForeColor = System.Drawing.Color.Transparent
+        Me.LbUser.Location = New System.Drawing.Point(1775, 85)
+        Me.LbUser.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LbUser.Name = "LbUser"
-        Me.LbUser.Size = New System.Drawing.Size(47, 21)
+        Me.LbUser.Size = New System.Drawing.Size(72, 32)
         Me.LbUser.TabIndex = 20
         Me.LbUser.Text = "Kasir"
         '
@@ -95,21 +97,25 @@ Partial Class FormUtamaKasir
         Me.PBpembelian.BackColor = System.Drawing.Color.Transparent
         Me.PBpembelian.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.btTemplate
         Me.PBpembelian.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PBpembelian.Location = New System.Drawing.Point(1110, 29)
+        Me.PBpembelian.Location = New System.Drawing.Point(1665, 45)
+        Me.PBpembelian.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PBpembelian.Name = "PBpembelian"
-        Me.PBpembelian.Size = New System.Drawing.Size(227, 73)
+        Me.PBpembelian.Size = New System.Drawing.Size(340, 112)
         Me.PBpembelian.TabIndex = 19
         Me.PBpembelian.TabStop = False
         '
         'FormUtamaKasir
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.food_pizza_photo_background_wallpaper_preview
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1920, 1106)
         Me.Controls.Add(Me.LbUser)
         Me.Controls.Add(Me.PBpembelian)
         Me.Controls.Add(Me.MenuUtama)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "FormUtamaKasir"
         Me.Text = "Form7"
         CType(Me.MenuUtama, System.ComponentModel.ISupportInitialize).EndInit()
