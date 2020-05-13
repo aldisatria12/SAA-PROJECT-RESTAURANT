@@ -67,7 +67,7 @@ Public Class FormCheck
                             F = dtMenu2.Rows(j).Item(0).ToString
                         End If
                     Next
-                    query = "insert into dselling values ('" + D + "', '" + F + "', " + DgvCheck.Rows(i).Cells(1).Value.ToString + ");"
+                    query = "insert into dselling values ('" + D + "', '" + F + "', " + DgvCheck.Rows(i).Cells(1).Value.ToString + ", '" + DgvCheck.Rows(i).Cells(2).Value.ToString + "');"
                     sqlcommand = New MySqlCommand(query, sqlconnect)
                     sqlcommand.ExecuteNonQuery()
                 Next
@@ -86,9 +86,11 @@ Public Class FormCheck
                     ada = 0
                     For j = 0 To dtCek.Rows.Count - 1
                         If DgvCheck.Rows(i).Cells(0).Value.ToString = dtCek.Rows(j).Item(1).ToString Then
-                            amount = CInt(dtCek.Rows(j).Item(2))
-                            amount += CInt(DgvCheck.Rows(i).Cells(1).Value)
+                            amount = CInt(DgvCheck.Rows(i).Cells(1).Value)
                             query = "update dselling set amount = " + amount.ToString + " where invoice_id = '" + D + "' and menu_id = '" + dtCek.Rows(j).Item(0).ToString + "';"
+                            sqlcommand = New MySqlCommand(query, sqlconnect)
+                            sqlcommand.ExecuteNonQuery()
+                            query = "update dselling set keterangan = '" + DgvCheck.Rows(i).Cells(2).Value.ToString + "' where invoice_id = '" + D + "' and menu_id = '" + dtCek.Rows(j).Item(0).ToString + "';"
                             sqlcommand = New MySqlCommand(query, sqlconnect)
                             sqlcommand.ExecuteNonQuery()
                             ada = 1

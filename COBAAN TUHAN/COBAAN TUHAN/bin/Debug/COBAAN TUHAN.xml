@@ -22,6 +22,11 @@ COBAAN TUHAN
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources._2813122">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:COBAAN_TUHAN.My.Resources.Resources._444634_PEMTQB_849">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -43,6 +48,31 @@ COBAAN TUHAN
 </summary>
 </member>
 <member name="P:COBAAN_TUHAN.My.Resources.Resources.close">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.coffee_core_texture_caffeine">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.edit2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.food_pizza_photo_background_wallpaper_preview">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.gray_concrete_buildings_top_view_wallpaper_preview">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -72,7 +102,22 @@ COBAAN TUHAN
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.red_tomatoes_tomatoes_wallpaper_preview">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.table_food_cover_wood">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:COBAAN_TUHAN.My.Resources.Resources.wallpaper_wiki_Download_Images_Food_HD_PIC_WPD006571">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:COBAAN_TUHAN.My.Resources.Resources.wallpaperflare_com_wallpaper">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

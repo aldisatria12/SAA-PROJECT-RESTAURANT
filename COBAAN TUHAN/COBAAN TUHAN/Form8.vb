@@ -124,6 +124,10 @@ Public Class FormPay
         End If
         refrespb()
         refreshlb()
+        If FormMenu.cobaan = 1 Then
+            FormMenu.cobaan = 0
+            Call FormMenu.isiDatatable()
+        End If
     End Sub
 
 

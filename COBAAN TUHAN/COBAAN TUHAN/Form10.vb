@@ -8,11 +8,13 @@ Public Class FormMenu
     Dim ImgDg As New DataGridViewImageColumn
     Dim ImgDg2 As New DataGridViewImageColumn
     Dim dtSimpan As New DataTable
+    Dim dtTambah2 As New DataTable
     Public dtOrder(20) As DataTable
     Dim A As Integer 'Quantity
     Public R As Integer 'simpan row
     Dim C As String() 'rows insert datatable
     Dim P As Integer 'true false
+    Public cobaan As Integer
     Private Sub FormMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Left = 0
         Me.Top = 0
@@ -35,6 +37,9 @@ Public Class FormMenu
             ImgDg2.Image = My.Resources.minus
             ImgDg2.ImageLayout = ImageLayout.Stretch
             ImgDg2.Name = "ImgDg2"
+            If FormPay.tambah = 1 Then
+                cobaan = 1
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -114,7 +119,27 @@ Public Class FormMenu
                 sqlconnect.Close()
                 MsgBox(ex.Message)
             End Try
+        Else
+            FormPay.tambah = 0
         End If
         Me.Close()
+    End Sub
+
+    Sub isiDatatable()
+        dtTambah2 = New DataTable
+        query = "select menu_name, amount, keterangan
+                        from dselling d, menu m
+                        where d.menu_id = m.menu_id and d.invoice_id = '" + FormPay.dtTambah.Rows(0).Item(0).ToString + "';"
+        sqlcommand = New MySqlCommand(query, sqlconnect)
+        sqladapter = New MySqlDataAdapter(sqlcommand)
+        sqladapter.Fill(dtTambah2)
+        For i = 0 To DgvMenu.Rows.Count - 2
+            For j = 0 To dtTambah2.Rows.Count - 1
+                If dtTambah2.Rows(j).Item(0).ToString = DgvMenu.Rows(i).Cells(4).Value.ToString Then
+                    DgvMenu.Rows(i).Cells(0).Value = dtTambah2.Rows(j).Item(1).ToString
+                    DgvMenu.Rows(i).Cells(1).Value = dtTambah2.Rows(j).Item(2).ToString
+                End If
+            Next
+        Next
     End Sub
 End Class
