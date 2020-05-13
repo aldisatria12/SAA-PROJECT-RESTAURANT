@@ -60,6 +60,7 @@ Public Class FormPay
             lb(i, 0).Left = (110 * i) + 320
             lb(i, 0).Font = New Font("Segoe UI", 10, FontStyle.Bold)
             lb(i, 0).Text = "available"
+            lb(i, 0).BackColor = Color.Transparent
             lb(i, 0).Parent = Me
             lb(i, 1) = New Label
             lb(i, 1).Visible = True
@@ -69,6 +70,7 @@ Public Class FormPay
             lb(i, 1).Left = (110 * i) + 320
             lb(i, 1).Font = New Font("Segoe UI", 10, FontStyle.Bold)
             lb(i, 1).Text = "available"
+            lb(i, 1).BackColor = Color.Transparent
             lb(i, 1).Parent = Me
         Next
         refrespb()
