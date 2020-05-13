@@ -97,6 +97,8 @@ Public Class FormMenu
                 FormCheck.LbTable.Text = LbTable.Text
                 FormCheck.DgvCheck.DataSource = dtSimpan
                 FormCheck.MdiParent = formParent
+                FormCheck.Top = 0
+                FormCheck.Left = 0
                 FormCheck.Show()
             End If
         Catch ex As Exception

@@ -16,12 +16,16 @@ Public Class Form_pembelian
     Private Sub MenuKas_Click(sender As Object, e As EventArgs)
         Me.Close()
         FormKas.MdiParent = formParent
+        FormKas.Top = 0
+        FormKas.Left = 0
         FormKas.Show()
     End Sub
 
     Private Sub MenuPay_Click(sender As Object, e As EventArgs)
         Me.Close()
         FormPay.MdiParent = formParent
+        FormPay.Top = 0
+        FormPay.Left = 0
         FormPay.Show()
     End Sub
 

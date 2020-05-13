@@ -80,6 +80,7 @@ Public Class FormPay
     End Sub
 
     Sub clickpb(sender As Object, e As EventArgs)
+        tambah = 0
         If LbUser.Text = "Waiter" Then
             FormCustomer.Q = sender.tag.ToString
             If sender.backcolor = Color.Green Then
@@ -122,6 +123,7 @@ Public Class FormPay
                     FormCustomer.Q = sender.tag.ToString
                     FormCustomer.dtCustomer = New DataTable
                     tekan = sender.tag.ToString
+                    Form_pembelian.MdiParent = formParent
                     Form_pembelian.Top = 0
                     Form_pembelian.Left = 0
                     Form_pembelian.Show()
