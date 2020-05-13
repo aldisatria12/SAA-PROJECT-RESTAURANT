@@ -31,6 +31,7 @@ Partial Class formParent
         Me.ClientSize = New System.Drawing.Size(1284, 724)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
+        Me.MaximizeBox = False
         Me.Name = "formParent"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "formParent"

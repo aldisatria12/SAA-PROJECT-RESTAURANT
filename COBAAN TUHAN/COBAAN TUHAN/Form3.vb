@@ -115,10 +115,10 @@ Public Class formInsert
     End Sub
 
     Private Sub dgAdmin_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgAdmin.CellClick
-        If dgAdmin.CurrentCell.OwningColumn.Name = "btEdt" Then
+        If dgAdmin.CurrentCell.OwningColumn.Name = "pbEdt" Then
             editmode = True
             formAdd.Show()
-        ElseIf dgAdmin.CurrentCell.OwningColumn.Name = "btDel" Then
+        ElseIf dgAdmin.CurrentCell.OwningColumn.Name = "pbDel" Then
             If MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Try
                     sqlConnect.Open()

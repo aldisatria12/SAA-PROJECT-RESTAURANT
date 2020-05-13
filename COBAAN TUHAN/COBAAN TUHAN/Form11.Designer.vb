@@ -31,20 +31,18 @@ Partial Class FormKeterangan
         '
         'BtnOk
         '
-        Me.BtnOk.Location = New System.Drawing.Point(270, 262)
-        Me.BtnOk.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnOk.Location = New System.Drawing.Point(180, 170)
         Me.BtnOk.Name = "BtnOk"
-        Me.BtnOk.Size = New System.Drawing.Size(112, 35)
+        Me.BtnOk.Size = New System.Drawing.Size(75, 23)
         Me.BtnOk.TabIndex = 9
         Me.BtnOk.Text = "Ok"
         Me.BtnOk.UseVisualStyleBackColor = True
         '
         'RtbKet
         '
-        Me.RtbKet.Location = New System.Drawing.Point(188, 82)
-        Me.RtbKet.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.RtbKet.Location = New System.Drawing.Point(149, 52)
         Me.RtbKet.Name = "RtbKet"
-        Me.RtbKet.Size = New System.Drawing.Size(382, 146)
+        Me.RtbKet.Size = New System.Drawing.Size(256, 96)
         Me.RtbKet.TabIndex = 8
         Me.RtbKet.Text = ""
         '
@@ -53,10 +51,9 @@ Partial Class FormKeterangan
         Me.LbMenu.AutoSize = True
         Me.LbMenu.BackColor = System.Drawing.Color.Transparent
         Me.LbMenu.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbMenu.Location = New System.Drawing.Point(183, 35)
-        Me.LbMenu.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbMenu.Location = New System.Drawing.Point(108, 23)
         Me.LbMenu.Name = "LbMenu"
-        Me.LbMenu.Size = New System.Drawing.Size(77, 25)
+        Me.LbMenu.Size = New System.Drawing.Size(57, 17)
         Me.LbMenu.TabIndex = 7
         Me.LbMenu.Text = "Label3"
         '
@@ -65,10 +62,9 @@ Partial Class FormKeterangan
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(62, 82)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(27, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(137, 25)
+        Me.Label2.Size = New System.Drawing.Size(102, 17)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Keterangan :"
         '
@@ -78,26 +74,24 @@ Partial Class FormKeterangan
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(66, 35)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(30, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 25)
+        Me.Label1.Size = New System.Drawing.Size(102, 17)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Menu          :"
         '
         'FormKeterangan
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.COBAAN_TUHAN.My.Resources.Resources.coffee_core_texture_caffeine
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(700, 335)
+        Me.ClientSize = New System.Drawing.Size(467, 218)
         Me.Controls.Add(Me.BtnOk)
         Me.Controls.Add(Me.RtbKet)
         Me.Controls.Add(Me.LbMenu)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "FormKeterangan"
         Me.Text = "Form11"
         Me.ResumeLayout(False)

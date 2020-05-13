@@ -260,10 +260,9 @@ Partial Class Form_Report_Customer
         '
         Me.DVcustomer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DVcustomer.DocumentSource = GetType(COBAAN_TUHAN.XtraReport2)
-        Me.DVcustomer.IsMetric = True
         Me.DVcustomer.Location = New System.Drawing.Point(0, 150)
         Me.DVcustomer.Name = "DVcustomer"
-        Me.DVcustomer.Size = New System.Drawing.Size(800, 273)
+        Me.DVcustomer.Size = New System.Drawing.Size(1264, 504)
         Me.DVcustomer.TabIndex = 0
         '
         'DocumentViewerRibbonController1
@@ -276,20 +275,13 @@ Partial Class Form_Report_Customer
         '
         Me.RCcustomer.AutoHideEmptyItems = True
         Me.RCcustomer.ExpandCollapseItem.Id = 0
-        Me.RCcustomer.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RCcustomer.ExpandCollapseItem, Me.PrintPreviewBarItem1, Me.PrintPreviewBarItem2, Me.PrintPreviewBarItem3, Me.PrintPreviewBarItem4, Me.PrintPreviewBarItem5, Me.PrintPreviewBarItem6, Me.PrintPreviewBarItem7, Me.PrintPreviewBarItem8, Me.PrintPreviewBarItem9, Me.PrintPreviewBarItem10, Me.PrintPreviewBarItem11, Me.PrintPreviewBarItem12, Me.PrintPreviewBarItem13, Me.PrintPreviewBarItem14, Me.PrintPreviewBarItem15, Me.PrintPreviewBarItem16, Me.PrintPreviewBarItem17, Me.PrintPreviewBarItem18, Me.PrintPreviewBarItem19, Me.PrintPreviewBarItem20, Me.PrintPreviewBarItem21, Me.PrintPreviewBarItem22, Me.PrintPreviewBarItem23, Me.PrintPreviewBarItem24, Me.PrintPreviewBarItem25, Me.PrintPreviewBarItem26, Me.PrintPreviewBarItem27, Me.PrintPreviewBarItem28, Me.PrintPreviewBarItem29, Me.PrintPreviewBarItem30, Me.PrintPreviewBarItem31, Me.PrintPreviewBarItem32, Me.PrintPreviewBarItem33, Me.PrintPreviewBarItem34, Me.PrintPreviewBarItem35, Me.PrintPreviewBarItem36, Me.PrintPreviewBarItem37, Me.PrintPreviewBarItem38, Me.PrintPreviewBarItem39, Me.PrintPreviewBarItem40, Me.PrintPreviewBarItem41, Me.PrintPreviewBarItem42, Me.PrintPreviewBarItem43, Me.PrintPreviewBarItem44, Me.PrintPreviewBarItem45, Me.PrintPreviewBarItem46, Me.PrintPreviewBarItem47, Me.PrintPreviewBarItem48, Me.PrintPreviewBarItem49, Me.PrintPreviewBarItem50, Me.PrintPreviewBarItem51, Me.PrintPreviewStaticItem1, Me.ProgressBarEditItem1, Me.PrintPreviewBarItem52, Me.PrintPreviewStaticItem2, Me.ZoomTrackBarEditItem1})
+        Me.RCcustomer.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RCcustomer.ExpandCollapseItem, Me.PrintPreviewBarItem1, Me.PrintPreviewBarItem2, Me.PrintPreviewBarItem3, Me.PrintPreviewBarItem4, Me.PrintPreviewBarItem5, Me.PrintPreviewBarItem6, Me.PrintPreviewBarItem7, Me.PrintPreviewBarItem8, Me.PrintPreviewBarItem9, Me.PrintPreviewBarItem10, Me.PrintPreviewBarItem11, Me.PrintPreviewBarItem12, Me.PrintPreviewBarItem13, Me.PrintPreviewBarItem14, Me.PrintPreviewBarItem15, Me.PrintPreviewBarItem16, Me.PrintPreviewBarItem17, Me.PrintPreviewBarItem18, Me.PrintPreviewBarItem19, Me.PrintPreviewBarItem20, Me.PrintPreviewBarItem21, Me.PrintPreviewBarItem22, Me.PrintPreviewBarItem23, Me.PrintPreviewBarItem24, Me.PrintPreviewBarItem25, Me.PrintPreviewBarItem26, Me.PrintPreviewBarItem27, Me.PrintPreviewBarItem28, Me.PrintPreviewBarItem29, Me.PrintPreviewBarItem30, Me.PrintPreviewBarItem31, Me.PrintPreviewBarItem32, Me.PrintPreviewBarItem33, Me.PrintPreviewBarItem34, Me.PrintPreviewBarItem35, Me.PrintPreviewBarItem36, Me.PrintPreviewBarItem37, Me.PrintPreviewBarItem38, Me.PrintPreviewBarItem39, Me.PrintPreviewBarItem40, Me.PrintPreviewBarItem41, Me.PrintPreviewBarItem42, Me.PrintPreviewBarItem43, Me.PrintPreviewBarItem44, Me.PrintPreviewBarItem45, Me.PrintPreviewBarItem46, Me.PrintPreviewBarItem47, Me.PrintPreviewBarItem48, Me.PrintPreviewBarItem49, Me.PrintPreviewBarItem50, Me.PrintPreviewBarItem51, Me.PrintPreviewStaticItem1, Me.ProgressBarEditItem1, Me.PrintPreviewBarItem52, Me.PrintPreviewStaticItem2, Me.ZoomTrackBarEditItem1, Me.RCcustomer.SearchEditItem})
         Me.RCcustomer.Location = New System.Drawing.Point(0, 0)
         Me.RCcustomer.MaxItemId = 57
         Me.RCcustomer.Name = "RCcustomer"
         Me.RCcustomer.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RCcustomer.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemProgressBar1, Me.RepositoryItemZoomTrackBar1})
-        '
-        '
-        '
-        Me.RCcustomer.SearchEditItem.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left
-        Me.RCcustomer.SearchEditItem.EditWidth = 150
-        Me.RCcustomer.SearchEditItem.Id = -5000
-        Me.RCcustomer.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.[True]
-        Me.RCcustomer.Size = New System.Drawing.Size(800, 150)
+        Me.RCcustomer.Size = New System.Drawing.Size(1264, 150)
         Me.RCcustomer.StatusBar = Me.RibbonStatusBar1
         Me.RCcustomer.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.[True]
         '
@@ -1381,16 +1373,16 @@ Partial Class Form_Report_Customer
         Me.RibbonStatusBar1.ItemLinks.Add(Me.PrintPreviewBarItem52)
         Me.RibbonStatusBar1.ItemLinks.Add(Me.PrintPreviewStaticItem2)
         Me.RibbonStatusBar1.ItemLinks.Add(Me.ZoomTrackBarEditItem1)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 423)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 654)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.RCcustomer
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(800, 27)
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1264, 27)
         '
         'Form_Report_Customer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1264, 681)
         Me.Controls.Add(Me.DVcustomer)
         Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.RCcustomer)
